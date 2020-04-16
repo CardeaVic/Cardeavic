@@ -7,6 +7,11 @@
         <title>{{config('app.name', 'Cardea')}}</title>
     </head>
     <body>
-        @yield('content')
+        @include('include.navbar')
+        <div class="container">
+            @yield('content')
+        </div>
+        @include('include.footer')
     </body>
+
 </html>
