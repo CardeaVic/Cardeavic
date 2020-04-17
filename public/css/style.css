@@ -32,6 +32,8 @@ body > .container {
   padding-left: 15px;
 }
   
+/* https://jsfiddle.net/mehmetb/c3q62m93/ */
+
 .overlay {
   display: block;
   position: fixed;

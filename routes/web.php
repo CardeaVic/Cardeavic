@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
-Route::get('/home', 'PagesController@home');
+Route::get('/', 'PagesController@landing');
+Route::get('/index', 'PagesController@index');
 Route::get('/dashboard', 'PagesController@dashboard');
 Route::get('/form', 'PagesController@form');
-Route::get('/services', 'PagesController@services');

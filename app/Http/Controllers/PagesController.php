@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function index(){
+    public function landing(){
         $title = 'Welcome to Cardea';
-        return view('pages.index')->with('title', $title);
+        return view('pages.landing')->with('title', $title);
     }
 
-    public function home(){
+    public function index(){
         $title = 'Welcome to Home';
-        return view('pages.home')->with('title', $title);
+        return view('pages.index')->with('title', $title);
     }
 
     public function dashboard(){
@@ -22,15 +22,15 @@ class PagesController extends Controller
     }
 
     public function form(){
-        $title = 'Welcome to Form';
+        $title = 'Welcome to Health Assessment';
         return view('pages.form')->with('title', $title);
     }
 
-    public function services(){
-        $data = array(
-            'title' => 'Services',
-            'services' => ['Service A', 'Service B', 'Service C']
-        );
-        return view('pages.services')->with($data);
-    }
+    // public function services(){
+    //     $data = array(
+    //         'title' => 'Services',
+    //         'services' => ['Service A', 'Service B', 'Service C']
+    //     );
+    //     return view('pages.services')->with($data);
+    // }
 }
