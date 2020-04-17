@@ -6,8 +6,10 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-          
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+
         <title>{{config('app.name', 'Cardea')}}</title>
+        
     </head>
     <body>
         @include('include.navbar')
@@ -18,6 +20,11 @@
 
         <!-- Scripts -->
         <script src="{{asset('js/app.js')}}"></script>
-        
+
+        <script>
+        setTimeout(function() {
+            //After 5000 milliseconds, fade out the overlay. The animation duration is 500 ms.
+          $(".overlay").fadeOut(500);
+        }, 5000);</script>
     </body>
 </html>

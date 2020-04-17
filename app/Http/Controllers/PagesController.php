@@ -11,6 +11,11 @@ class PagesController extends Controller
         return view('pages.index')->with('title', $title);
     }
 
+    public function home(){
+        $title = 'Welcome to Home';
+        return view('pages.home')->with('title', $title);
+    }
+
     public function dashboard(){
         $title = 'Welcome to Dashboard';
         return view('pages.dashboard')->with('title', $title);
