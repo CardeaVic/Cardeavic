@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PagesController@landing');
-Route::get('/welcome', function(){
+Route::get('welcome', function(){
     return view('pages.welcome');
 });
 Route::get('/index', 'PagesController@index');
