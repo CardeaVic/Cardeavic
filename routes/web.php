@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'PagesController@landing');
+Route::get('/welcome', function(){
+    return view('pages.welcome');
+});
 Route::get('/index', 'PagesController@index');
 Route::get('/dashboard', 'PagesController@dashboard');
 Route::get('/form', 'PagesController@form');
