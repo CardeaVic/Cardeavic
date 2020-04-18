@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row" style="height: 100%; vertical-align: center;">
             <div class="col s12 m12 l12 center-align elementToFadeInAndOut">
-                <img class="responsive-img" src="{{ asset('/images/CardeaLogo.png') }}">
+                <img class="responsive-img" src="{{ asset('/images/CardeaLogo_final.png') }}">
             </div>
         </div>
     </div>
