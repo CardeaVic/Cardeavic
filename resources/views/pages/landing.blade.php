@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @push('meta')
-    <meta http-equiv="refresh" content="5;url={{env('APP_URL')}}/welcome" />
+    <meta http-equiv="refresh" content="5;url=/welcome" />
     @endpush
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/cd.landing.css?".uniqid()) }}">

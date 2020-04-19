@@ -17,3 +17,11 @@ Route::get('welcome', function(){
     return view('pages.welcome');
 });
 
+Route::get('/assessment', function(){
+    return view('pages.assessment');
+});
+
+Route::get('/test', function(){
+    return view('pages.test');
+});
+

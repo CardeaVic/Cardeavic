@@ -33,7 +33,12 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="{{ asset('/css/materialize.min.css') }}">
     <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
+   
     @stack('css')
+    
+    <!-- Import SurveyJs required js -->
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://surveyjs.azureedge.net/1.7.2/survey.jquery.js"></script>
 </head>
 
 <body>
@@ -41,6 +46,8 @@
 
 <!--JavaScript at end of body for optimized loading-->
 <script src="{{ asset('/js/materialize.min.js') }}"></script>
+<script src="{{ asset('/js/survey.js') }}"></script>
+        
 @stack('js')
 </body>
 </html>

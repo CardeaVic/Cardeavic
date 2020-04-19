@@ -208,3 +208,7 @@
     }
 }
 /* Firefox < 16 */
+
+.form{
+    z-index: 2;
+}
