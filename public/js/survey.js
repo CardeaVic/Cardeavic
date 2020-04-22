@@ -47,11 +47,11 @@ var json = {
                     "isRequired": true,
                     "choices": [
                         {
-                            "value": "Male",
+                            "value": "1",
                             "text": "Male"
                         },
                         {
-                            "value": "Female",
+                            "value": "0",
                             "text": "Female"
                         }
                     ]
@@ -76,11 +76,11 @@ var json = {
                     "isRequired": true,
                     "choices": [
                         {
-                            "value": "Yes",
+                            "value": "1",
                             "text": "Yes"
                         },
                         {
-                            "value": "No",
+                            "value": "0",
                             "text": "No"
                         }
                     ]
@@ -91,24 +91,24 @@ var json = {
                     "isRequired": true,
                     "choices": [
                         {
-                            "value": "Children",
+                            "value": "4",
                             "text": "Children"
                         },
                         {
-                            "value": "Never_worked",
+                            "value": "1",
                             "text": "Never Worked",
                             "itemChecked": "checked",
                         },
                         {
-                            "value": "Self-employed",
+                            "value": "3",
                             "text": "Self Employed"
                         },
                         {
-                            "value": "Govt_job",
+                            "value": "0",
                             "text": "Government Job"
                         },
                         {
-                            "value": "Private",
+                            "value": "2",
                             "text": "Private Job"
                         }
                     ]
@@ -119,15 +119,15 @@ var json = {
                     "isRequired": true,
                     "choices": [
                         {
-                            "value": "never smoked",
+                            "value": "1",
                             "text": "Never Smoked"
                         },
                         {
-                            "value": "formerly smoked",
+                            "value": "0",
                             "text": "Formerly Smoked"
                         },
                         {
-                            "value": "smokes",
+                            "value": "2",
                             "text": "Smokes"
                         }
                     ]
@@ -138,11 +138,11 @@ var json = {
                     "isRequired": true,
                     "choices": [
                         {
-                            "value": "Rural",
+                            "value": "0",
                             "text": "Rural"
                         },
                         {
-                            "value": "Urban",
+                            "value": "1",
                             "text": "Urban"
                         }
                     ]
@@ -184,7 +184,7 @@ var json = {
                 },
                 {
                     "type": "boolean",
-                    "name": "Are you suffering from hypertension",
+                    "name": "Are you suffering from hypertension?",
                     "isRequired": true,
                     "labelTrue": "Yes",
                     "labelFalse": "No"
@@ -203,7 +203,9 @@ window.survey = new Survey.Model(json);
 survey
     .onComplete
     .add(function (result) {
-       console.log(result);
+        document.getElementById('formData').value = JSON.stringify(result.data);
+        document.surveyForm.submit();
     });
+
 
 $("#surveyElement").Survey({model: survey, css: myCss});
