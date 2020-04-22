@@ -21,7 +21,6 @@ Route::get('/assessment', function(){
     return view('pages.assessment');
 });
 
-Route::get('/test', function(){
-    return view('pages.test');
+Route::get('/dashboard', function(){
+    return view('pages.dashboard');
 });
-
