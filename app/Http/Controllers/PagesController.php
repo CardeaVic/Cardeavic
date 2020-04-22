@@ -42,13 +42,14 @@ class PagesController extends Controller
         $workType = intval($formData["Work Type?"]);
         $smokingStatus = intval($formData["Your smoking status?"]);
         $residenceType = intval($formData["Residence Type?"]);
-        $bmi = intval($formData["Your BMI?"]);
-        $glucoseLevel = intval($formData["What is your average Glucose level?"]);
-        $heartDisease = $formData["Do you have any kind of heart disease?"] = true ? 0 : 1;
+        $bmi = floatval($formData["Your BMI?"]);
+        $glucoseLevel = floatval($formData["What is your average Glucose level?"]);
+        $heartDisease = $formData["Do you have any kind of heart disease?"] = true ? 1 : 0;
         $hyperTension = $formData["Are you suffering from hypertension?"] = true ? 0 : 1;
 
         $data = [$gender, $age, $hyperTension, $heartDisease, $everMarried, $workType, $residenceType, $glucoseLevel, $bmi, $smokingStatus];
         $endpoint = "ec2-3-22-233-87.us-east-2.compute.amazonaws.com/predict";
+
 
         // executing the cURL to get the prediction from the server
         $ch = curl_init();
