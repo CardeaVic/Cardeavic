@@ -30,24 +30,23 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Import FontAwesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="{{ asset('/css/materialize.min.css') }}">
+    <!--Import w3css.css-->
+    <link rel="stylesheet" href="{{ asset('/css/w3.css') }}">
     <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
-   
+
     @stack('css')
-    
-    <!-- Import SurveyJs required js -->
-    <script src="https://unpkg.com/jquery"></script>
-    <script src="https://surveyjs.azureedge.net/1.7.2/survey.jquery.js"></script>
+
+
+
 </head>
 
 <body>
 @yield('content')
 
 <!--JavaScript at end of body for optimized loading-->
-<script src="{{ asset('/js/materialize.min.js') }}"></script>
-<script src="{{ asset('/js/survey.js') }}"></script>
-        
+{{--<script src="{{ asset('/js/materialize.min.js') }}"></script>--}}
+<!-- Import SurveyJs required js -->
+<script src="https://unpkg.com/jquery"></script>
 @stack('js')
 </body>
 </html>
