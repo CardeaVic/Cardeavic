@@ -16,6 +16,10 @@
         <div class="w3-row-padding z-index-2">
             <div class="w3-col l12 s12 m12">
                 <div id="surveyElement" style="display: inline-block; width: 100%;"></div>
+                <form name="surveyForm" method="POST" action="{{ route('assessment.result') }}">
+                    @csrf
+                    <input id="formData" type="text" name="formData" value="" hidden>
+                </form>
             </div>
         </div>
         <ul class="bg-bubbles">
