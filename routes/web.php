@@ -21,9 +21,13 @@ Route::get('/assessment', function(){
     return view('pages.assessment');
 });
 
+
 Route::Post('/assessment/result', ['as' => 'assessment.result', 'uses' => 'PagesController@submitForm']);
 
 Route::get('/test', function(){
     return view('pages.test');
 });
 
+Route::get('/dashboard', function(){
+    return view('pages.dashboard');
+});
