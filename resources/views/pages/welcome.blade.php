@@ -14,7 +14,7 @@
                 <p class="single-text-center">Welcome</p>
                 <i class="fas fa-hand-holding-heart fa-4x" style="color: white"></i>
                 <p class="small-text-center">You are one step away from knowing your heart score!</p>
-                <button type="button" class="w3-round custom-button" onclick="window.location.href='assessment'">Continue to Assessment</button>
+                <button type="button" class="w3-round custom-button" onclick="window.location.href='assessment'">Continue</button>
             </div>
         </div>
         <ul class="bg-bubbles">
