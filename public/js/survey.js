@@ -18,7 +18,7 @@ var myCss = {
 };
 
 var json = {
-    "completeText": "Complete",
+    "completeText": "Submit",
     "pageNextText": "Next",
     "pagePrevText": "Previous",
     "title": "CARDIOVASCULAR HEALTH ASSESSMENT",
@@ -31,8 +31,9 @@ var json = {
                     "type": "html",
                     "name": "intro html",
                     "html": "<div style='color: white'>" +
-                        "<p>Are you ready to take the assessment?</p>\n <p> Please select or enter the appropriate response to the given questions.</p>" +
-                        "\n<p>No Questions related to your identity are asked except \"Age\" and \"Gender\"</p>" +
+                        "<h2 class='w3-red'><strong>Important!<strong></h2>\n <p> None of the questions asked are related to your identity except Age and Gender.</p>" +
+                        "\n<p>Please answer all the questions appropriately.</p>" +
+                        "<p>Are you ready for the assessment?</p>" +
                         "</div>"
                 }
             ],
@@ -45,6 +46,7 @@ var json = {
                     "type": "radiogroup",
                     "name": "Gender?",
                     "isRequired": true,
+                    "requiredErrorText": "Please select an option",
                     "choices": [
                         {
                             "value": "1",
@@ -60,13 +62,14 @@ var json = {
                     "type": "text",
                     "name": "Age?",
                     "isRequired": true,
+                    "requiredErrorText": "Please enter a value",
                     "inputType": "number",
                     "validators": [
                         {
                             type: "numeric",
                             minValue: 21,
                             maxValue: 100,
-                            text: "Age should be between 21 and 100",
+                            text: "The assessment is applicable to ages 21 years and above",
                         }
                         ],
                 },
@@ -74,6 +77,7 @@ var json = {
                     "type": "radiogroup",
                     "name": "Ever Married?",
                     "isRequired": true,
+                    "requiredErrorText": "Please select an option",
                     "choices": [
                         {
                             "value": "1",
@@ -89,10 +93,11 @@ var json = {
                     "type": "radiogroup",
                     "name": "Work Type?",
                     "isRequired": true,
+                    "requiredErrorText": "Please select an option",
                     "choices": [
                         {
                             "value": "4",
-                            "text": "Children"
+                            "text": "Home Maker"
                         },
                         {
                             "value": "1",
@@ -117,6 +122,7 @@ var json = {
                     "type": "radiogroup",
                     "name": "Your smoking status?",
                     "isRequired": true,
+                    "requiredErrorText": "Please select an option",
                     "choices": [
                         {
                             "value": "1",
@@ -124,11 +130,11 @@ var json = {
                         },
                         {
                             "value": "0",
-                            "text": "Formerly Smoked"
+                            "text": "Former Smoker"
                         },
                         {
                             "value": "2",
-                            "text": "Smokes"
+                            "text": "Current Smoker"
                         }
                     ]
                 },
@@ -136,6 +142,7 @@ var json = {
                     "type": "radiogroup",
                     "name": "Residence Type?",
                     "isRequired": true,
+                    "requiredErrorText": "Please select an option",
                     "choices": [
                         {
                             "value": "0",
@@ -149,8 +156,9 @@ var json = {
                 },
                 {
                     "type": "text",
-                    "name": "Your BMI?",
+                    "name": "Your BMI? (BMI = kg/metres squared)",
                     "isRequired": true,
+                    "requiredErrorText": "Please enter a value",
                     "inputType": "number",
                     "validators": [
                         {
@@ -165,7 +173,9 @@ var json = {
                     "type": "text",
                     "name": "What is your average Glucose level?",
                     "isRequired": true,
+                    "requiredErrorText": "Please enter a value",
                     "inputType": "number",
+                    "placeHolder": "100 for normal person",
                     "validators": [
                         {
                             type: "numeric",
@@ -176,26 +186,46 @@ var json = {
                     ],
                 },
                 {
-                    "type": "boolean",
+                    "type": "radiogroup",
                     "name": "Do you have any kind of heart disease?",
                     "isRequired": true,
-                    "labelTrue": "Yes",
-                    "labelFalse": "No"
-                },
-                {
-                    "type": "boolean",
+                    "requiredErrorText": "Please select an option",
+                    "choices": [
+                     {
+                      "value": "1",
+                      "text": "Yes"
+                     },
+                     {
+                      "value": "0",
+                      "text": "No"
+                     }
+                    ]
+                   },
+                   {
+                    "type": "radiogroup",
                     "name": "Are you suffering from hypertension?",
                     "isRequired": true,
-                    "labelTrue": "Yes",
-                    "labelFalse": "No"
+                    "requiredErrorText": "Please select an option",
+                    "choices": [
+                     {
+                      "value": "1",
+                      "text": "Yes"
+                     },
+                     {
+                      "value": "0",
+                      "text": "No"
+                     }
+                    ]
                 }
             ]
         }
     ],
+    "questionErrorLocation": "bottom",
     "showProgressBar": "top",
     "progressBarType": "questions",
     "firstPageIsStarted": true,
     "questionsOnPageMode": "questionPerPage",
+    "requiredText": ""
 };
 
 window.survey = new Survey.Model(json);
