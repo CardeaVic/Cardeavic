@@ -60,4 +60,15 @@ input::-webkit-inner-spin-button {
     width: fit-content !important;
 }
 
+.sv-text{
+    width: fit-content !important;
+}
+
+/* .sv-question {
+    width: 100% !important;
+} */
+.sv-row__question--small{
+    max-width: 100% !important;
+}
+
 
