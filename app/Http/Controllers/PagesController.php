@@ -60,7 +60,9 @@ class PagesController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
         curl_close($ch);
-        dd($response);
+
+        
+        return view('pages.result', compact('response'));
     }
 
     // public function services(){
