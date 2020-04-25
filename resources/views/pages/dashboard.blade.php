@@ -11,12 +11,12 @@
                 <img class="w3-image" width="140px" height="140px" src="{{asset('/images/CardeaLogo_final.png')}}">
             </div>
         </div>
-        <div class="w3-row-padding z-index-2">
+        <div class="w3-row-padding w3-content">
             <div class="w3-col l12 s12 m12">
-                <h1 class="h2 w3-center w3-text-white">Dashboard</h1>
+                <h1 class="h2 w3-center">Dashboard</h1>
                 <canvas class="my-4 w-100" id="myChart" width="400" height="200"></canvas>
 
-                <h2 class="h2 w3-center w3-text-white">Your records</h2>
+                <h2 class="h2 w3-center">Your records</h2>
                 <table class="w3-table-all w3-card-4">
                     <thead>
                       <tr class="w3-teal">

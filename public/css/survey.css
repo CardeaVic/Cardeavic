@@ -25,7 +25,7 @@
 
  .custom-body{
      font-size: 16pt;
-     font-family: 'Open Sans', sans-serif;
+     font-family: 'Open Sans', sans-serif !important;
      height: 100%;
      width: 100%;
      text-wrap: none;
@@ -64,9 +64,22 @@ input::-webkit-inner-spin-button {
     width: fit-content !important;
 }
 
+::placeholder{
+    font-size: 12pt !important;
+    color: rgb(196, 196, 196) !important;
+}
+
+input:focus::placeholder {
+    color: transparent !important;
+  }
 /* .sv-question {
     width: 100% !important;
 } */
+
+input{
+    text-align: center !important;
+    padding: 0 !important;
+}
 .sv-row__question--small{
     max-width: 100% !important;
 }
