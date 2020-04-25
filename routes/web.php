@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', 'PagesController@landing');
+Route::get('/landing', 'PagesController@landing');
+
+Route::get('/', function(){
+    return view('pages.password');
+});
+
 
 Route::get('welcome', function(){
     return view('pages.welcome');

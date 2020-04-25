@@ -14,24 +14,6 @@ class PagesController extends Controller
         return view('pages.landing')->with('title', $title);
     }
 
-    public function index()
-    {
-        $title = 'Welcome to Home';
-        return view('pages.index')->with('title', $title);
-    }
-
-    public function dashboard()
-    {
-        $title = 'Welcome to Dashboard';
-        return view('pages.dashboard')->with('title', $title);
-    }
-
-    public function form()
-    {
-        $title = 'Welcome to Health Assessment';
-        return view('pages.form')->with('title', $title);
-    }
-
     public function submitForm(Request $request)
     {
         $input = $request->all();
@@ -42,7 +24,7 @@ class PagesController extends Controller
         $workType = intval($formData["Work Type?"]);
         $smokingStatus = intval($formData["Your smoking status?"]);
         $residenceType = intval($formData["Residence Type?"]);
-        $bmi = floatval($formData["Your BMI?"]);
+        $bmi = floatval($formData["Your BMI? (Weight in Kgs / Height in meters squared)"]);
         $glucoseLevel = floatval($formData["What is your average Glucose level?"]);
         $heartDisease = $formData["Do you have any kind of heart disease?"] = true ? 1 : 0;
         $hyperTension = $formData["Are you suffering from hypertension?"] = true ? 0 : 1;
