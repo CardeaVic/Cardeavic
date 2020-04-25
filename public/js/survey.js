@@ -156,10 +156,11 @@ var json = {
                 },
                 {
                     "type": "text",
-                    "name": "Your BMI? (BMI = kg/metres squared)",
+                    "name": "Your BMI?",
                     "isRequired": true,
                     "requiredErrorText": "Please enter a value",
                     "inputType": "number",
+                    "placeHolder": "BMI = kg/metres squared",
                     "validators": [
                         {
                             type: "numeric",
