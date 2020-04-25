@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @push('css')
-    <link rel="stylesheet" href="{{ asset("/css/cd.welcome.css?".uniqid()) }}">
     <link rel="stylesheet" href="{{ asset("/css/dashboard.css?".uniqid()) }}">
     
 @endpush
@@ -9,7 +8,7 @@
     <div class="w3-container wrapper">
         <div class="w3-row custom-logo">
             <div class="w3-col s12 m12 l12">
-                <img class="w3-image" src="{{asset('/images/CardeaLogoSmall.png')}}">
+                <img class="w3-image" width="140px" height="140px" src="{{asset('/images/CardeaLogo_final.png')}}">
             </div>
         </div>
         <div class="w3-row-padding z-index-2">
@@ -68,20 +67,6 @@
                   </table>
             </div>
         </div>
-
-        
-        <ul class="bg-bubbles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
     </div>
 @endsection
 @push('js')

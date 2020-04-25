@@ -31,7 +31,7 @@ var json = {
                     "type": "html",
                     "name": "intro html",
                     "html": "<div style='color: white'>" +
-                        "<h2 class='w3-red'><strong>Important!<strong></h2>\n <p> None of the questions asked are related to your identity except Age and Gender.</p>" +
+                        "<h2><strong>Important!<strong></h2>\n <p> None of the questions asked are related to your identity except Age and Gender.</p>" +
                         "\n<p>Please answer all the questions appropriately.</p>" +
                         "<p>Are you ready for the assessment?</p>" +
                         "</div>"
