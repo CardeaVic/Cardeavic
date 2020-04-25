@@ -1,16 +1,15 @@
 @extends('layouts.app')
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/dashboard.css?".uniqid()) }}">
-    
+        <!-- Bootstrap core CSS -->
+    <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 @endpush
 
+
+
 @section('content')
+    @include('include.navbar')
     <div class="w3-container wrapper">
-        <div class="w3-row custom-logo">
-            <div class="w3-col s12 m12 l12">
-                <img class="w3-image" width="140px" height="140px" src="{{asset('/images/CardeaLogo_final.png')}}">
-            </div>
-        </div>
         <div class="w3-row-padding w3-content">
             <div class="w3-col l12 s12 m12">
                 <h1 class="h2 w3-center">Dashboard</h1>
@@ -19,7 +18,7 @@
                 <h2 class="h2 w3-center">Your records</h2>
                 <table class="w3-table-all w3-card-4">
                     <thead>
-                      <tr class="w3-teal">
+                      <tr class="custom-table-header">
                         <th>#</th>
                         <th>Date</th>
                         <th>Activity</th>
@@ -70,8 +69,6 @@
     </div>
 @endsection
 @push('js')
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script src="{{ asset('/js/dashboard.js?'.uniqid()) }}"></script>

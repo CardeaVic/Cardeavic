@@ -26,6 +26,7 @@
     <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     @stack('meta')
+    
     <!-- Import Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <!--Import Google Icon Font-->
@@ -35,7 +36,7 @@
     <!--Import w3css.css-->
     <link rel="stylesheet" href="{{ asset('/css/w3.css') }}">
     <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
-
+    <link rel="stylesheet" href="{{ asset("/css/navbar.css?".uniqid()) }}">
     @stack('css')
 
 
@@ -49,6 +50,16 @@
 {{--<script src="{{ asset('/js/materialize.min.js') }}"></script>--}}
 <!-- Import SurveyJs required js -->
 <script src="https://unpkg.com/jquery"></script>
+<script>
+    function myFunction() {
+      var x = document.getElementById("hamburgerbtn");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
 @stack('js')
 </body>
 </html>
