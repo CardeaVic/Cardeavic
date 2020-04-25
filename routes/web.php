@@ -27,7 +27,11 @@ Route::get('/assessment', function(){
 });
 
 
-Route::Post('/assessment/result', ['as' => 'assessment.result', 'uses' => 'PagesController@submitForm']);
+Route::post('/assessment/result', ['as' => 'assessment.result', 'uses' => 'PagesController@submitForm']);
+
+Route::get('/about-cardea', function(){
+    return view('pages.about-cardea');
+})-> name('about-cardea');
 
 Route::get('/test', function(){
     return view('pages.test');
@@ -36,3 +40,8 @@ Route::get('/test', function(){
 Route::get('/dashboard', function(){
     return view('pages.dashboard');
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

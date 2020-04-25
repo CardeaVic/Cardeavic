@@ -1,14 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <div class="w3-container">
-        {{-- <div class="w3-row verticle-align-center w3-center">
-            <div class="w3-col l12 s12 m12 w3-center">
-                <input class="w3-input w3-border w3-round" placeholder="Password" type="text" id="pw" name="password" style="margin: auto;margin-bottom: 20px;">
-                <button type="button" class="w3-button w3-block w3-blue" onclick="checkPass()">Continue</button>
-                <p id="errorMsg" style="color:red; visibility:hidden"></p>
-            </div>
-        </div> --}}
-        <div class="w3-row verticle-align-center w3-center" style="margin:auto; margin-top:50%; width: 100px; height: 100px;">
+        <p class="w3-center" style="margin-top: 100px;">
+            Please enter password to continue viewing the application
+        </p>
+        <div class="w3-row verticle-align-center w3-center" style="margin:auto; width: 100px; height: 100px;">
             <div class="w3-col l12 s12 m12 w3-center">
                 <input class="w3-input w3-border w3-round" placeholder="Password" type="text" id="pw" name="password" style="margin: auto;margin-bottom: 20px;">
                 <button type="button" class="w3-button w3-block w3-blue" onclick="checkPass()">Continue</button>

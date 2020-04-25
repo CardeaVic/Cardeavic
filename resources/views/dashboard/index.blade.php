@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/dashboard.css?".uniqid()) }}">
-    
+
 @endpush
 
 @section('content')
@@ -19,52 +19,52 @@
                 <h2 class="h2 w3-center">Your records</h2>
                 <table class="w3-table-all w3-card-4">
                     <thead>
-                      <tr class="w3-teal">
+                    <tr class="w3-teal">
                         <th>#</th>
                         <th>Date</th>
                         <th>Activity</th>
                         <th>Fruit intake</th>
                         <th>Vegetable intake</th>
-                      </tr>
+                    </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                    <tr>
                         <td>1</td>
                         <td>02-02-2020</td>
                         <td>Yes</td>
                         <td>No</td>
                         <td>No</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>2</td>
                         <td>02-03-2020</td>
                         <td>Yes</td>
                         <td>Yes</td>
                         <td>No</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>3</td>
                         <td>02-04-2020</td>
                         <td>No</td>
                         <td>Yes</td>
                         <td>No</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>4</td>
                         <td>02-05-2020</td>
                         <td>No</td>
                         <td>Yes</td>
                         <td>No</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>5</td>
                         <td>02-06-2020</td>
                         <td>Yes</td>
                         <td>Yes</td>
                         <td>No</td>
-                      </tr>
+                    </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
     </div>

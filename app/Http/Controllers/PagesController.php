@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use function MongoDB\BSON\toJSON;
 
 
 class PagesController extends Controller
@@ -26,8 +27,8 @@ class PagesController extends Controller
         $residenceType = intval($formData["Residence Type?"]);
         $bmi = floatval($formData["Your BMI? (Weight in Kgs / Height in meters squared)"]);
         $glucoseLevel = floatval($formData["What is your average Glucose level?"]);
-        $heartDisease = $formData["Do you have any kind of heart disease?"] = true ? 1 : 0;
-        $hyperTension = $formData["Are you suffering from hypertension?"] = true ? 0 : 1;
+        $heartDisease = intval($formData["Do you have any kind of heart disease?"]);
+        $hyperTension = intval($formData["Are you suffering from hypertension?"]);
 
         $data = [$gender, $age, $hyperTension, $heartDisease, $everMarried, $workType, $residenceType, $glucoseLevel, $bmi, $smokingStatus];
         $endpoint = "ec2-3-22-233-87.us-east-2.compute.amazonaws.com/predict";
@@ -42,8 +43,8 @@ class PagesController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
         curl_close($ch);
-
-        
+        $response = explode(" ", $response);
+        $response = intval(round(str_replace('[[', '', $response[0]) * 100, 0));
         return view('pages.result', compact('response'));
     }
 
