@@ -14,7 +14,7 @@
 Route::get('/landing', 'PagesController@landing');
 
 Route::get('/', function(){
-    return view('pages.admin');
+    return view('pages.password');
 });
 
 
