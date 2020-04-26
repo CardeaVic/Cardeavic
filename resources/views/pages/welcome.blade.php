@@ -25,7 +25,7 @@
             <div class="w3-col l12 s12 m12 w3-center">
                 <p class="single-text-center">Welcome</p>
                 <i class="fas fa-hand-holding-heart fa-4x" style="color: white"></i>
-                <p class="small-text-center">You are one step away from knowing your heart score!</p>
+                <p class="small-text-center">You are one step away from knowing how healthy your heart is!</p>
                 <button type="button" class="w3-round custom-button" onclick="window.location.href = 'assessment'">
                     Continue
                 </button>
