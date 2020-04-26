@@ -71,7 +71,7 @@ var json = {
                             maxValue: 100,
                             text: "The assessment is applicable to ages 21 years and above",
                         }
-                        ],
+                    ],
                 },
                 {
                     "type": "radiogroup",
@@ -191,30 +191,30 @@ var json = {
                     "isRequired": true,
                     "requiredErrorText": "Please select an option",
                     "choices": [
-                     {
-                      "value": "1",
-                      "text": "Yes"
-                     },
-                     {
-                      "value": "0",
-                      "text": "No"
-                     }
+                        {
+                            "value": "1",
+                            "text": "Yes"
+                        },
+                        {
+                            "value": "0",
+                            "text": "No"
+                        }
                     ]
-                   },
-                   {
+                },
+                {
                     "type": "radiogroup",
                     "name": "Are you suffering from hypertension?",
                     "isRequired": true,
                     "requiredErrorText": "Please select an option",
                     "choices": [
-                     {
-                      "value": "1",
-                      "text": "Yes"
-                     },
-                     {
-                      "value": "0",
-                      "text": "No"
-                     }
+                        {
+                            "value": "1",
+                            "text": "Yes"
+                        },
+                        {
+                            "value": "0",
+                            "text": "No"
+                        }
                     ]
                 }
             ]

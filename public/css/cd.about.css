@@ -1,4 +1,5 @@
-.custom-button-login{
+/*Custome Login Button Css*/
+.custom-button-login {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -16,7 +17,8 @@
     transition-duration: 0.25s;
 }
 
-.custom-button-signup{
+/*Custome Sign Up Button Css*/
+.custom-button-signup {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

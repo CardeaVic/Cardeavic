@@ -1,8 +1,11 @@
-body{
+
+/*Setting Open Sans Font on the entire website*/
+body {
     font-family: 'Open Sans', sans-serif !important;
 }
 
-.z-index-2{
+/* Css effect is at z index 1 putting everything above it*/
+.z-index-2 {
     position: relative;
     z-index: 2;
 }

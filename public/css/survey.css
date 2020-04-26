@@ -1,86 +1,88 @@
+/*Survey Js custom CSS*/
+.custom-start-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    padding: 10px 15px;
+    color: #53e3a6;
+    border-radius: 3px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
- .custom-start-button{
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;
-     outline: 0;
-     background-color: white;
-     border: 0;
-     padding: 10px 15px;
-     color: #53e3a6;
-     border-radius: 3px;
-     width: 200px;
-     height: 50px;
-     cursor: pointer;
-     font-size: 18px;
-     -webkit-transition-duration: 0.25s;
-     transition-duration: 0.25s;
-     margin-top: 10px;
-     margin-bottom: 10px;
- }
+.color-white {
+    color: white !important;
+}
 
- .color-white{
-     color: white !important;
- }
+.custom-body {
+    font-size: 16pt;
+    font-family: 'Open Sans', sans-serif !important;
+    height: 100%;
+    width: 100%;
+    text-wrap: none;
+    margin: auto;
+}
 
- .custom-body{
-     font-size: 16pt;
-     font-family: 'Open Sans', sans-serif !important;
-     height: 100%;
-     width: 100%;
-     text-wrap: none;
-     margin: auto;
- }
-
-.custom-title{
+.custom-title {
     font-weight: bold;
 }
 
-.sv-container-modern{
+.sv-container-modern {
     text-align: center;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-.sv-container-modern__title{
+.sv-container-modern__title {
     padding-top: 1em !important;
 }
 
-.sv-selectbase{
+.sv-selectbase {
     width: fit-content !important;
     margin: auto !important;
     text-align: start;
 }
 
-.sv-selectbase > div{
+.sv-selectbase > div {
     width: fit-content !important;
 }
 
-.sv-text{
+.sv-text {
     width: fit-content !important;
 }
 
-::placeholder{
+::placeholder {
     font-size: 12pt !important;
     color: rgb(196, 196, 196) !important;
 }
 
 input:focus::placeholder {
     color: transparent !important;
-  }
+}
+
 /* .sv-question {
     width: 100% !important;
 } */
 
-input{
+input {
     text-align: center !important;
     padding: 0 !important;
 }
-.sv-row__question--small{
+
+.sv-row__question--small {
     max-width: 100% !important;
 }
 

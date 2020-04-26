@@ -1,4 +1,5 @@
-body{
+/*Welcome page body changes*/
+body {
     background: #50a3a2;
     background: -webkit-gradient(linear, left top, right bottom, from(#50a3a2), to(#53e3a6));
     background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%) fixed;
@@ -10,32 +11,37 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
 }
-.custom-logo{
+
+/*Custom Logo Location on the page*/
+.custom-logo {
     margin-top: 30px;
 }
 
-@media (min-width:320px) and (max-width: 450px)  {
-    .custom-logo{
+/*Custom logo for small screen*/
+@media (min-width: 320px) and (max-width: 450px) {
+    .custom-logo {
         margin-top: 15px;
         width: 150px !important;
         height: 75px !important;
     }
 }
 
-.single-text-center{
+/*Text on the welcome page*/
+.single-text-center {
     color: white;
     font-size: 24pt;
     height: 100%;
     font-weight: bold;
 }
 
-.small-text-center{
+.small-text-center {
     color: white;
     font-size: 16pt;
     height: 100%;
 }
 
-.custom-button{
+/*Custome button on welcome page*/
+.custom-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -54,6 +60,7 @@ body{
 }
 
 
+/*Rectabge bubbles effect in the background*/
 .bg-bubbles {
     position: absolute;
     top: 0;
@@ -62,6 +69,7 @@ body{
     height: 100%;
     z-index: 1;
 }
+
 .bg-bubbles li {
     position: absolute;
     list-style: none;
@@ -76,11 +84,13 @@ body{
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
 }
+
 .bg-bubbles li:nth-child(1) {
     left: 5%;
     -webkit-transition: background-color 10s;
     transition: background-color 10s;
 }
+
 .bg-bubbles li:nth-child(2) {
     left: 10%;
     -webkit-transition: 3s;
@@ -92,11 +102,13 @@ body{
     -webkit-animation-duration: 17s;
     animation-duration: 17s;
 }
+
 .bg-bubbles li:nth-child(3) {
     left: 15%;
     -webkit-animation-delay: 4s;
     animation-delay: 4s;
 }
+
 .bg-bubbles li:nth-child(4) {
     left: 25%;
     width: 60px;
@@ -105,9 +117,11 @@ body{
     animation-duration: 22s;
     background-color: rgba(255, 255, 255, 0.25);
 }
+
 .bg-bubbles li:nth-child(5) {
     left: 35%;
 }
+
 .bg-bubbles li:nth-child(6) {
     left: 50%;
     width: 120px;
@@ -116,6 +130,7 @@ body{
     animation-delay: 3s;
     background-color: rgba(255, 255, 255, 0.2);
 }
+
 .bg-bubbles li:nth-child(7) {
     left: 32%;
     width: 160px;
@@ -123,6 +138,7 @@ body{
     -webkit-animation-delay: 7s;
     animation-delay: 7s;
 }
+
 .bg-bubbles li:nth-child(8) {
     left: 55%;
     width: 20px;
@@ -133,6 +149,7 @@ body{
     animation-duration: 40s;
 
 }
+
 .bg-bubbles li:nth-child(9) {
     left: 25%;
     width: 10px;
@@ -143,6 +160,7 @@ body{
     animation-duration: 40s;
     background-color: rgba(255, 255, 255, 0.3);
 }
+
 .bg-bubbles li:nth-child(10) {
     left: 70%;
     width: 160px;
@@ -151,6 +169,7 @@ body{
     animation-delay: 11s;
 
 }
+
 @-webkit-keyframes square {
     0% {
         -webkit-transform: translateY(0);
@@ -161,6 +180,7 @@ body{
         transform: translateY(-700px) rotate(600deg);
     }
 }
+
 @keyframes square {
     0% {
         -webkit-transform: translateY(0);
@@ -171,6 +191,7 @@ body{
         transform: translateY(-700px) rotate(600deg);
     }
 }
+
 @-webkit-keyframes fadein {
     from {
         opacity: 0;
@@ -179,6 +200,7 @@ body{
         opacity: 1;
     }
 }
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -187,6 +209,7 @@ body{
         opacity: 1;
     }
 }
+
 /* Firefox < 16 */
 @-webkit-keyframes fadeout {
     from {
@@ -196,6 +219,7 @@ body{
         opacity: 0;
     }
 }
+
 @keyframes fadeout {
     from {
         opacity: 1;
@@ -204,5 +228,6 @@ body{
         opacity: 0;
     }
 }
+
 /* Firefox < 16 */
 

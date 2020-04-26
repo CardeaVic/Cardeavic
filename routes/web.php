@@ -11,37 +11,40 @@
 |
 */
 
+// Route for landing page
 Route::get('/landing', 'PagesController@landing');
 
-Route::get('/', function(){
+// Initial password protection route
+Route::get('/', function () {
     return view('pages.password');
 });
 
-
-Route::get('welcome', function(){
+//Welcomepage
+Route::get('welcome', function () {
     return view('pages.welcome');
 });
 
-Route::get('/assessment', function(){
+//Assessment Page
+Route::get('/assessment', function () {
     return view('pages.assessment');
 });
 
-
+//Assessment Result
 Route::post('/assessment/result', ['as' => 'assessment.result', 'uses' => 'PagesController@submitForm']);
 
-Route::get('/about-cardea', function(){
+//About Cardea
+Route::get('/about-cardea', function () {
     return view('pages.about-cardea');
-})-> name('about-cardea');
+})->name('about-cardea');
 
-Route::get('/test', function(){
+//Test Route
+Route::get('/test', function () {
     return view('pages.test');
 });
 
-Route::get('/dashboard', function(){
-    return view('pages.dashboard');
-});
-
-
+//Authentication Routes
 Auth::routes();
 
+
+// After login taking to dashboard
 Route::get('/home', 'HomeController@index')->name('home');

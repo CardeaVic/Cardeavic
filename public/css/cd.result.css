@@ -1,8 +1,10 @@
-.disclaimer{
+/* Disclaimer font awesome icon color change to orange*/
+.disclaimer {
     color: darkorange;
 }
 
-.custom-button-result{
+/* Custom button on the front card of result page*/
+.custom-button-result {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -20,7 +22,8 @@
     transition-duration: 0.25s;
 }
 
-.custom-button-whats-next{
+/*Whats next button at the back of the result card*/
+.custom-button-whats-next {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -38,17 +41,20 @@
     transition-duration: 0.25s;
 }
 
-.margin-custom{
+/*Container div set margins*/
+.margin-custom {
     margin-top: 3%;
     margin-left: 20%;
 }
 
+/*Flip card prespective enclosing*/
 .scene {
     /*width: 900px;*/
     height: 400px;
     perspective: 900px;
 }
 
+/* Setting Card height and weight*/
 .card {
     width: 100%;
     height: 100%;
@@ -57,6 +63,7 @@
     transform-style: preserve-3d;
 }
 
+/*Card Face Css*/
 .card__face {
     position: absolute;
     height: 100%;
@@ -64,18 +71,22 @@
     backface-visibility: hidden;
 }
 
+/*Card Face Front*/
 .card__face--front {
 }
 
+/*Card Face Back*/
 .card__face--back {
-    transform: rotateY( 180deg );
+    transform: rotateY(180deg);
 }
 
+/*Toggle Class for Card Flipped*/
 .card.is-flipped {
     transform: rotateY(180deg);
 }
 
-.result-score{
+/*Displaying Score in big and bold letter*/
+.result-score {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 42pt;
@@ -84,11 +95,13 @@
 
 }
 
-@media (min-width:320px) and (max-width: 450px)  {
-    .margin-custom{
+/*Css for small screen*/
+@media (min-width: 320px) and (max-width: 450px) {
+    .margin-custom {
         margin-top: 7%;
-        margin-left: 0% ;
+        margin-left: 0%;
     }
+
     .scene {
         width: 350px;
         height: 330px;
