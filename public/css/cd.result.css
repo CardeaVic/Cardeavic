@@ -1,3 +1,12 @@
+body {
+    font-family: 'Open Sans', sans-serif !important;
+
+}
+
+h1, h2, p, #text, .custom-text-color {
+    font-family: 'Open Sans', sans-serif !important;
+    color: #50a3a2 !important;
+}
 /* Disclaimer font awesome icon color change to orange*/
 .disclaimer {
     color: darkorange;
@@ -9,7 +18,7 @@
     -moz-appearance: none;
     appearance: none;
     outline: 0;
-    background-color: #e3a653;
+    background-color: #50a3a2;
     border: 0;
     padding: 10px 15px;
     color: white;

@@ -172,10 +172,10 @@ var json = {
                 {
                     "type": "text",
                     "name": "What is your average Glucose level?",
+                    "description": "hint: 100 for normal person",
                     "isRequired": true,
                     "requiredErrorText": "Please enter a value",
                     "inputType": "number",
-                    "placeHolder": "100 for normal person",
                     "validators": [
                         {
                             type: "numeric",

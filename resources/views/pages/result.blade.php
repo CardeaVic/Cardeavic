@@ -38,7 +38,7 @@
                     <header class="w3-container w3-center">
                         <h2>Congratulations</h2>
                     </header>
-                    <div class="w3-container w3-center">
+                    <div class="w3-container w3-center custom-text-color">
                         There is
                         <p class="result-score">
                             {{ $response }}%
