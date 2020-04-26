@@ -6,13 +6,7 @@
 {{--Main Container--}}
 @section('content')
     <div class="w3-container">
-        {{-- <div class="w3-row">
-            <div class="w3-col s12 m12 l12 z-index-2">
-                <button type="button" class="w3-btn w3-medium w3-round w3-right w3-white custom-login" onclick="window.location.href = 'login'">
-                    Login
-                </button>
-            </div>
-        </div> --}}
+        {{-- Login button --}}
         <div class="w3-row">
             <div class="w3-col s12 m12 l12 z-index-2">
                 <a href="login" class="w3-right custom-login">Login</a>
