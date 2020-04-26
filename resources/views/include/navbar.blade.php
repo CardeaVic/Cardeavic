@@ -1,26 +1,4 @@
-{{-- <nav class="navbar navbar-expand-md navbar-laravel navbar-dark bg-dark">
-    <a class="navbar-brand" href="/index"><img src="/images/CardeaLogoSmall.png" alt="Cardea Logo" style="width:50px;height:50px"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/dashboard">Home</a>
-      </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Daily Log</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Report</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Assessment</a>
-      </li>
-      </ul>
-    </div>
-</nav> --}}
+{{-- Navigation bar --}}
 <div class="w3-bar custom-nav">
     <a href="/dashboard" class="w3-bar-item"><img src="/images/CardeaLogoSmall.png" alt="Cardea Logo"
                                                   style="width:auto;height:34px"></a>
@@ -39,6 +17,7 @@
     </a>
 </div>
 
+{{-- Hamburger menu --}}
 <div id="hamburgerbtn" class="w3-bar-block w3-large custom-nav w3-hide w3-hide-large w3-hide-medium">
     <a href="/dashboard" class="w3-bar-item w3-button w3-hover-teal">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-hover-teal">Daily Log</a>

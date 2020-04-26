@@ -46,9 +46,11 @@
 @yield('content')
 
 <!--JavaScript at end of body for optimized loading-->
-{{--<script src="{{ asset('/js/materialize.min.js') }}"></script>--}}
+
 <!-- Import SurveyJs required js -->
 <script src="https://unpkg.com/jquery"></script>
+
+{{-- Navbar Hamburger --}}
 <script>
     function myFunction() {
         var x = document.getElementById("hamburgerbtn");

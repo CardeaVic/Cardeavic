@@ -17,14 +17,14 @@
         <div class="w3-row verticle-align-center w3-center z-index-2">
             <div class="w3-col l12 s12 m12 w3-center">
                 <p class="single-text-center">Your result can Improve</p>
-                <p class="small-text-center">We at "CARDEA" provide daily Log book for recording your lifestyle
-                    habits</p>
-                <p class="small-text-center">Logging your daily life style habits will generate you a personalised
-                    health report about your Cardiovascular Health</p>
-                <p class="small-text-center">Logbook primarily focuses on your "Eating", "Physical" and "Smoking"
-                    Habits</p>
-                <p class="small-text-center">Logbook will have a personalised dashboard for tracking ups and downs in
-                    your habits</p>
+                <p class="small-text-center">We at CARDEA provide a daily Log book feature for recording your 
+                    lifestyle habits.</p>
+                <p class="small-text-center">Logging your daily life style habits will help us to generate a 
+                    personalized report about your Cardiovascular Health.</p>
+                <p class="small-text-center">The log book primarily focuses on your eating habits, physical 
+                    activity and smoking status if any. </p>
+                <p class="small-text-center">The log book feature will enable a personalized dashboard for 
+                    tracking the trends in your daily habits.</p>
                 <button type="button" class="w3-round custom-button-login" onclick="window.location.href = 'login'">
                     Login
                 </button>
