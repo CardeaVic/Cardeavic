@@ -6,12 +6,20 @@
 {{--Main Container--}}
 @section('content')
     <div class="w3-container">
+        {{-- Login button --}}
+        <div class="w3-row">
+            <div class="w3-col s12 m12 l12 z-index-2">
+                <a href="login" class="w3-right custom-login">Login</a>
+            </div>
+        </div>
+
         {{--  Logo      --}}
         <div class="w3-row custom-logo">
             <div class="w3-col s12 m12 l12">
                 <img class="w3-image" src="{{asset('/images/CardeaLogoSmall.png')}}">
             </div>
         </div>
+
         {{--  Welcome Text      --}}
         <div class="w3-row verticle-align-center w3-center z-index-2">
             <div class="w3-col l12 s12 m12 w3-center">

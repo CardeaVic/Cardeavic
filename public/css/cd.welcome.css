@@ -231,3 +231,12 @@ body {
 
 /* Firefox < 16 */
 
+/* Custom Login */
+.custom-login{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
