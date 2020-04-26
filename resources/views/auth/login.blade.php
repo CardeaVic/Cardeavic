@@ -37,7 +37,9 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <span class="offset-4 col-md-6"><input type="checkbox" onclick="showPassword()"> Show Password</span>
+                        </div>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
