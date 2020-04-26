@@ -31,6 +31,12 @@
     <a href="javascript:void(0)"
        class="w3-bar-item w3-button w3-xlarge w3-hover-teal w3-right w3-hide-large w3-hide-medium"
        onclick="myFunction()">&#9776;</a>
+    <a href="logout" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+    </a>
 </div>
 
 <div id="hamburgerbtn" class="w3-bar-block w3-large custom-nav w3-hide w3-hide-large w3-hide-medium">
