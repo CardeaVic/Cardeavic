@@ -19,7 +19,7 @@
 
 {{-- Hamburger menu --}}
 <div id="hamburgerbtn" class="w3-bar-block w3-large custom-nav w3-hide w3-hide-large w3-hide-medium">
-    <a href="/dashboard" class="w3-bar-item w3-button w3-hover-teal">Home</a>
+    <a href="/home" class="w3-bar-item w3-button w3-hover-teal">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-hover-teal">Daily Log</a>
     <a href="#" class="w3-bar-item w3-button w3-hover-teal">Report</a>
     <a href="#" class="w3-bar-item w3-button w3-hover-teal">Assessment</a>
