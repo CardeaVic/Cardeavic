@@ -27,7 +27,9 @@ class PagesController extends Controller
         $workType = intval($formData["Work Type?"]);
         $smokingStatus = intval($formData["Your smoking status?"]);
         $residenceType = intval($formData["Residence Type?"]);
-        $bmi = floatval($formData["Your BMI? (Weight in Kgs / Height in meters squared)"]);
+        $height = intval($formData["Height(cm)?"]);
+        $weight = intval($formData["Weight(kgs)?"]);
+        $bmi = round($weight/(pow(($height/100),2)),2);
         $glucoseLevel = floatval($formData["What is your average Glucose level?"]);
         $heartDisease = intval($formData["Do you have any kind of heart disease?"]);
         $hyperTension = intval($formData["Are you suffering from hypertension?"]);
