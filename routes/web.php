@@ -48,3 +48,9 @@ Auth::routes();
 
 // After login taking to dashboard
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Logbook Route
+Route::get('/logbook', function () {
+    return view('pages.logbook');
+});
