@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="offset-2 col-md-10 col-form-label text-md-center">Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase, 1 Numeric and 1 special character.</label>
+                            <label class="offset-2 col-md-10 col-form-label text-md-center">Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase and 1 Numeric character.</label>
                         </div>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

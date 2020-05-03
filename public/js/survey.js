@@ -156,16 +156,31 @@ var json = {
                 },
                 {
                     "type": "text",
-                    "name": "Your BMI? (Weight in Kgs / Height in meters squared)",
+                    "name": "Height(cm)?",
                     "isRequired": true,
-                    "requiredErrorText": "Please enter a value",
+                    "requiredErrorText": "Please enter your height in centimeters",
                     "inputType": "number",
                     "validators": [
                         {
                             type: "numeric",
-                            minValue: 10,
-                            maxValue: 50,
-                            text: "BMI should be between 10 and 50",
+                            minValue: 0,
+                            maxValue: 300,
+                            text: "Height should be positive",
+                        }
+                    ],
+                },
+                {
+                    "type": "text",
+                    "name": "Weight(kgs)?",
+                    "isRequired": true,
+                    "requiredErrorText": "Please enter your height in kilograms",
+                    "inputType": "number",
+                    "validators": [
+                        {
+                            type: "numeric",
+                            minValue: 0,
+                            maxValue: 300,
+                            text: "Weight should be positive",
                         }
                     ],
                 },
