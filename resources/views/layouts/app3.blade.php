@@ -36,20 +36,36 @@
     <!--Import w3css.css-->
     <link rel="stylesheet" href="{{ asset('/css/w3.css') }}">
     <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
+    <link rel="stylesheet" href="{{ asset("/css/navbar.css?".uniqid()) }}">
     @stack('css')
 
 
 </head>
 
 <body>
-@yield('content')
+    {{--    Including the Navbar --}}
+    @include('include.navbar')
+    <div class="w3-container">
+        @include('include.messages')
+        @yield('content')
+    </div>
 
 <!--JavaScript at end of body for optimized loading-->
 
 <!-- Import SurveyJs required js -->
 <script src="https://unpkg.com/jquery"></script>
 
-
+{{-- Navbar Hamburger --}}
+<script>
+    function myFunction() {
+        var x = document.getElementById("hamburgerbtn");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
 @stack('js')
 </body>
 </html>

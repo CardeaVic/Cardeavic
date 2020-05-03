@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app3')
 {{--Css Imports--}}
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/dashboard.css?".uniqid()) }}">
@@ -6,8 +6,6 @@
     <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 @endpush
-
-
 
 @section('content')
     {{--    Including the Navbar --}}

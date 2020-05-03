@@ -37,11 +37,6 @@ Route::get('/about-cardea', function () {
     return view('pages.about-cardea');
 })->name('about-cardea');
 
-//Test Route
-Route::get('/test', function () {
-    return view('pages.test');
-});
-
 //Authentication Routes
 Auth::routes();
 
@@ -54,3 +49,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logbook', function () {
     return view('pages.logbook');
 });
+
+Route::resource('daily-activities', 'DailyActivitiesController');
