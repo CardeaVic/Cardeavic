@@ -3,6 +3,7 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/logbook.css?".uniqid()) }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" type="text/css" rel="stylesheet"/>
 
 @endpush
 
@@ -37,6 +38,11 @@
                 {{Form::radio('smoke', '1')}} Yes
                 {{Form::radio('smoke', '0')}} No
             </div>
+            <div class="form-group">
+                {{Form::label('date', 'Date')}}
+                {{Form::date('date', \Carbon\Carbon::now())}}
+            </div>
+
             {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
         {!! Form::close() !!}
     </div>
@@ -45,9 +51,6 @@
 @endsection
 
 @push('js')
-    <script src="https://unpkg.com/jquery"></script>
-    <script src="https://surveyjs.azureedge.net/1.7.4/survey.jquery.js"></script>
-    <script src="https://unpkg.com/moment@2.24.0/moment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

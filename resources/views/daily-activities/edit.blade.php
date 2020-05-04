@@ -52,6 +52,10 @@
                     {{Form::radio('smoke', '0', true)}} No
                 @endif
             </div>
+            <div class="form-group">
+                {{Form::label('date', 'Date')}}
+                {{Form::date('date', $daily_activity->date)}}
+            </div>
             {{Form::hidden('_method', 'PUT')}}
             {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
         {!! Form::close() !!}

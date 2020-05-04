@@ -8,8 +8,6 @@
 @endpush
 
 @section('content')
-    {{--    Including the Navbar --}}
-    @include('include.navbar')
     {{-- Main Container for Dashboard--}}
     <div class="w3-container wrapper">
         <div class="w3-row-padding w3-content">

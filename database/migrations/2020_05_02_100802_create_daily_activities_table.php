@@ -16,6 +16,7 @@ class CreateDailyActivitiesTable extends Migration
         Schema::create('daily_activities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
+            $table->date('date');
             $table->boolean('physical_activity');
             $table->integer('hours')->nullable();
             $table->integer('minutes')->nullable();

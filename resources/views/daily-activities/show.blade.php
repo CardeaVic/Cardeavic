@@ -8,10 +8,9 @@
 
 @section('content')
     <div class="w3-container">
-    <h1>This is your log for date: {{$daily_activity->created_at}}</h1>   
-        
+    <h1>This is your log for date: {{$daily_activity->date}}</h1>   
+    <div class="w3-responsive">
         <table class="w3-table w3-table-all w3-centered w3-card-4">
-
                 <tr class="w3-teal">
                     <th>Date</th>
                     <th>Physical Activity</th>
@@ -36,7 +35,7 @@
                 </tr>
         </table>
 
-
+    </div>
     </div>
 @endsection
 

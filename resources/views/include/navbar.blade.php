@@ -3,7 +3,6 @@
     <a href="/daily-activities" class="w3-bar-item"><img src="/images/CardeaLogoSmall.png" alt="Cardea Logo"
                                                   style="width:auto;height:34px"></a>
     <a href="/home" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">Home</a>
-    <a href="/daily-activities" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">Daily Activities</a>
     <a href="/daily-activities/create" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">Add Activity</a>
     <a href="javascript:void(0)"
        class="w3-bar-item w3-button w3-xlarge w3-hover-teal w3-right w3-hide-large w3-hide-medium"

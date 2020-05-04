@@ -9,8 +9,8 @@
     <div class="w3-container">
         <h1>Your daily log</h1>   
         <div class="w3-responsive">
-        <table class="w3-table w3-table-all w3-centered w3-hoverable">
-
+            @if(count($daily_activities) > 0)
+            <table class="w3-table w3-table-all w3-centered w3-card-4">
                 <tr class="w3-teal">
                     <th>Date</th>
                     <th>Physical Activity</th>
@@ -22,11 +22,9 @@
                     <th></th>
                     <th></th>
                 </tr>
-
-            @if(count($daily_activities) > 0)
                 @foreach($daily_activities as $daily_activity)
-                    <tr class="clickable-row" data-href="/daily-activities/{{$daily_activity->id}}">
-                        <td>{{$daily_activity->created_at}}</td>
+                    <tr>
+                        <td>{{$daily_activity->date}}</td>
                         <td>{{$daily_activity->physical_activity}}</td>
                         <td>{{$daily_activity->hours}}
                             @if($daily_activity->hours == '') - @endif</td>
@@ -45,14 +43,12 @@
                     <tr>
                     </tr>
                 @endforeach
-                
+            </table> 
             @else
                 <p>No activites found</p>
-            
             @endif
-        </table>
         </div>
-        {{$daily_activities->links()}}
+        {{-- {{$daily_activities->links()}} --}}
     </div>
 @endsection
 
