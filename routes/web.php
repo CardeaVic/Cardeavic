@@ -51,3 +51,8 @@ Route::get('/logbook', function () {
 });
 
 Route::resource('daily-activities', 'DailyActivitiesController');
+
+//Logbook Route
+Route::get('/notika-form', function () {
+    return view('pages.notika-form');
+});

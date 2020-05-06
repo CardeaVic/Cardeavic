@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="w3-container">
-        <h1>Your daily log</h1>   
+        {{-- <h1>Your daily log</h1>   
         <div class="w3-responsive">
             @if(count($daily_activities) > 0)
             <table class="w3-table w3-table-all w3-centered w3-card-4">
@@ -40,14 +40,69 @@
                                 {{Form::submit('Delete', ['class' => 'btn btn-link'])}}
                             {!! Form::close() !!}
                     </tr>
-                    <tr>
-                    </tr>
                 @endforeach
             </table> 
             @else
                 <p>No activites found</p>
             @endif
-        </div>
+        </div> --}}
+
+        @if(count($daily_activities) > 0)
+            <div class="data-table-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="data-table-list">
+                                <div class="basic-tb-hd">
+                                    <br \><h2>Your daily log</h2>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="data-table-basic" class="table table-striped">
+                                        <thead>
+                                            <tr class="w3-teal">
+                                                <th>Date</th>
+                                                <th>Physical Activity</th>
+                                                <th>Hours</th>
+                                                <th>Minutes</th>
+                                                <th>Fruits and Vegetables</th>
+                                                <th>Servings</th>
+                                                <th>Smoke</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($daily_activities as $daily_activity)
+                                                <tr>
+                                                    <td>{{$daily_activity->date}}</td>
+                                                    <td>{{$daily_activity->physical_activity}}</td>
+                                                    <td>{{$daily_activity->hours}}
+                                                        @if($daily_activity->hours == '') - @endif</td>
+                                                    <td>{{$daily_activity->minutes}} 
+                                                        @if($daily_activity->minutes == '') - @endif</td>
+                                                    <td>{{$daily_activity->fruit_vege}}</td>
+                                                    <td>{{$daily_activity->servings}}
+                                                        @if($daily_activity->servings == '') - @endif</td>
+                                                    <td>{{$daily_activity->smoke}}</td>
+                                                    <td><a href="/daily-activities/{{$daily_activity->id}}/edit" class="btn btn-info notika-btn-info waves-effect">Edit</td>
+                                                    <td>{!! Form::open(['action' => ['DailyActivitiesController@destroy', $daily_activity->id], 'method' => 'POST']) !!}
+                                                            {{Form::hidden('_method', 'DELETE')}}
+                                                            {{Form::submit('Delete', ['class' => 'btn btn-danger notika-btn-danger waves-effect'])}}
+                                                        {!! Form::close() !!}
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @else
+            <p>No activites found</p>
+        @endif
         {{-- {{$daily_activities->links()}} --}}
     </div>
 @endsection

@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
+ 
     /**
      * Show the application dashboard.
      *
@@ -27,6 +27,6 @@ class HomeController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
         
-        return view('daily-activities.index')->with('daily_activities', $user->daily_activities);
+        return view('daily-activities.index')->with('daily_activities', $user->daily_activities->sortByDesc('date'));
     }
 }

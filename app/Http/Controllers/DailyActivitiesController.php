@@ -123,8 +123,7 @@ class DailyActivitiesController extends Controller
             'minutes' => 'nullable|integer|between:0,60',
             'fruit_vege' => 'required',
             'servings' => 'nullable|integer|between:0,99',
-            'smoke' => 'required',
-            'date' => 'required|unique:daily_activities,date,NULL,id,user_id,'.\Auth::id()
+            'smoke' => 'required'
         ]);
         
         // Update the record based on the id

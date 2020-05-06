@@ -7,10 +7,10 @@
     <a href="javascript:void(0)"
        class="w3-bar-item w3-button w3-xlarge w3-hover-teal w3-right w3-hide-large w3-hide-medium"
        onclick="myFunction()">&#9776;</a>
-    <a href="logout" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">
+    <a href="logout" class="w3-right">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
-            <button type="submit">Logout</button>
+            <a class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small w3-right" type="submit">Logout</a>
         </form>
     </a>
 </div>
