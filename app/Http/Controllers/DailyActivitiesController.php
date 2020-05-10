@@ -24,8 +24,9 @@ class DailyActivitiesController extends Controller
      */
     public function index()
     {
-        $daily_activities = DailyActivity::orderBy('created_at', 'desc')->paginate(10);
-
+        $user_id = auth()->user()->id;
+        $daily_activities = DailyActivity::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(10);
+ 
         return view('daily-activities.index')->with('daily_activities', $daily_activities);
     }
 
@@ -58,7 +59,8 @@ class DailyActivitiesController extends Controller
             'smoke' => 'required',
             'date' => 'required|unique:daily_activities,date,NULL,id,user_id,'.\Auth::id()
         ]);
-        
+        //https://laracasts.com/discuss/channels/laravel/unique-validation-depend-on-the-user-id?page=1
+
         // Create new object and assign their values from form input
         $daily_activity = new DailyActivity;
         $daily_activity->user_id = auth()->user()->id;
@@ -72,7 +74,7 @@ class DailyActivitiesController extends Controller
         // Save the record in database
         $daily_activity->save();
 
-        return redirect('home')->with('success', 'Activity added');
+        return redirect('daily-activities')->with('success', 'Activity added');
 
     }
     
@@ -137,7 +139,7 @@ class DailyActivitiesController extends Controller
         // Save the record in database
         $daily_activity->save();
 
-        return redirect('home')->with('success', 'Activity updated');
+        return redirect('daily-activities')->with('success', 'Activity updated');
     }
 
     /**
@@ -152,10 +154,10 @@ class DailyActivitiesController extends Controller
         $daily_activity = DailyActivity::find($id);
         // Check for correct user
         if(auth()->user()->id !== $daily_activity->user_id){
-            return redirect('home')->with('error', 'Unauthorized Page');
+            return redirect('daily-activities')->with('error', 'Unauthorized Page');
         }
         // delete the record in database
         $daily_activity->delete();
-        return redirect('home')->with('success', 'Activity removed');
+        return redirect('daily-activities')->with('success', 'Activity removed');
     }
 }

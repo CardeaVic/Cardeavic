@@ -54,21 +54,22 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="data-table-list">
                                 <div class="basic-tb-hd">
-                                    <br \><h2>Your daily log</h2>
+                                    <br \><h1 class="w3-center">Your daily log</h1>
+                                    
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="data-table-basic" class="table table-striped">
+                                    <table id="data-table-basic" class="table table-striped w3-centered">
                                         <thead>
-                                            <tr class="w3-teal">
-                                                <th>Date</th>
-                                                <th>Physical Activity</th>
-                                                <th>Hours</th>
-                                                <th>Minutes</th>
-                                                <th>Fruits and Vegetables</th>
-                                                <th>Servings</th>
-                                                <th>Smoke</th>
+                                            <tr class="custom-table-header nk-white" >
+                                                <th class="w3-text-white" style="font-size: 18px;">Date</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Physical Activity</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Hours</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Minutes</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Fruits and Vegetables</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Servings</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Smoke</th>
                                                 <th></th>
-                                                <th></th>
+                                                <th><a href="/daily-activities/create" class="btn w3-right" style="padding: 0"><i class="far fa-plus-square w3-right" style="font-size:38px; color:white"></i></a></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -93,7 +94,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    
+                                    {{ $daily_activities->links() }}
                                 </div>
                             </div>
                         </div>
@@ -103,7 +104,7 @@
         @else
             <p>No activites found</p>
         @endif
-        {{-- {{$daily_activities->links()}} --}}
+
     </div>
 @endsection
 

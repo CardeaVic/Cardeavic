@@ -7,3 +7,11 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.custom-table-header {
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%) fixed;
+}
+
+a:hover{
+    text-decoration: none !important;
+}

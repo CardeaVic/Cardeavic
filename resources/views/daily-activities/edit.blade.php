@@ -3,23 +3,6 @@
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/logbook.css?".uniqid()) }}">
 
-    <!-- Bootstrap CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/bootstrap.min.css">
-    <!-- normalize CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/normalize.css">
-    <!-- wave CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/waves.min.css">
-    <link rel="stylesheet" href="/css/notika/button.css">
-
-    <!-- main CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/main.css">
-    <!-- style CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/style.css">
 @endpush
 
 @section('content')
@@ -196,17 +179,5 @@
 @endsection
 
 @push('js')
-    <!-- jquery
-		============================================ -->
-        <script src="/js/notika/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-		============================================ -->
-        <script src="/js/notika/bootstrap.min.js"></script>
-    <!--  wave JS
-		============================================ -->
-        {{-- <script src="/js/notika/waves.min.js"></script>
-        <script src="/js/notika/wave-active.js"></script> --}}
-    <!-- main JS
-	    ============================================ -->
-        <script src="/js/notika/main.js"></script>
+
 @endpush
