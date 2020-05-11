@@ -8,14 +8,12 @@
 @section('content')
     {{-- Main Container for Dashboard--}}
     <div class="w3-container">
-        <h1 class="w3-center">Dashboard</h1>
-
         <div class="area-chart-area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-left: auto; margin-right: auto;">
                         <div class="area-chart-wp">
-                            <canvas height="140vh" width="180vw" id="areachartfalse"></canvas>
+                            <canvas height="140vh" width="180vw" id="piechart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -26,12 +24,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="line-chart-wp chart-display-nn">
-                            <canvas height="140vh" width="180vw" id="basiclinechart"></canvas>
+                            <canvas height="140vh" width="180vw" id="physical_activity_chart"></canvas>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="line-chart-wp sm-res-mg-t-30 chart-display-nn">
-                            <canvas height="140vh" width="180vw" id="linechartinterpolation"></canvas>
+                            <canvas height="140vh" width="180vw" id="fruit_vege_chart"></canvas>
                         </div>
                     </div>
                 </div>

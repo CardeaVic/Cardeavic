@@ -102,7 +102,7 @@
 		============================================ -->
         <script src="/js/notika/Chart.js"></script>
         <script src="/js/notika/line-chart.js"></script>
-        <script src="/js/notika/area-chart.js"></script>
+        <script src="/js/notika/pie-chart.js"></script>
         
 @stack('js')
 </body>

@@ -1,26 +1,39 @@
+var records_list = daily_activities.records;
+var date = [];
+var minutes = [];
+var servings = [];
+for(record in records_list){
+	var x = records_list[record];
+	var m = x.minutes;
+	var h = x.hours * 60;
+	date.push(x.date);
+	minutes.push(m+h);
+	servings.push(x.servings*1);
+}
+
 (function ($) {
  "use strict";
  
 	 /*----------------------------------------*/
 	/*  1.  Basic Line Chart
 	/*----------------------------------------*/
-	var ctx = document.getElementById("basiclinechart");
+	var ctx = document.getElementById("physical_activity_chart");
 	var basiclinechart = new Chart(ctx, {
 		type: 'line',
 		data: {
-			labels: ["January", "February", "March"],
+			labels: date,
 			datasets: [{
-				label: "My First dataset",
+				label: "Recommended level",
 				fill: false,
                 backgroundColor: '#00c292',
 				borderColor: '#00c292',
-				data: [9, 12, 19]
+				data: [20, 20, 20, 20, 20, 20, 20]
             }, {
-                label: "My Second dataset",
+                label: "My actual level",
 				fill: false,
                 backgroundColor: '#fb9678',
 				borderColor: '#fb9678',
-				data: [-12, -3, -4]
+				data: minutes
 				
 		}]
 		},
@@ -28,7 +41,7 @@
 			responsive: true,
 			title:{
 				display:true,
-				text:'Basic Line Chart'
+				text:'Physical Activity'
 			},
 			tooltips: {
 				mode: 'index',
@@ -43,14 +56,14 @@
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: 'Month'
+						labelString: 'Days'
 					}
 				}],
 				yAxes: [{
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: 'Value'
+						labelString: 'Minutes'
 					}
 				}]
 			}
@@ -61,24 +74,23 @@
 	/*  2.  Line Chart Interpolation
 	/*----------------------------------------*/
 	
-	var ctx = document.getElementById("linechartinterpolation");
-	var linechartinterpolation = new Chart(ctx, {
+	var ctx = document.getElementById("fruit_vege_chart");
+	var basiclinechart = new Chart(ctx, {
 		type: 'line',
 		data: {
-			labels: ["0", "1", "2"],
+			labels: date,
 			datasets: [{
-				label: "Cubic interpolation",
+				label: "Recommended servings",
 				fill: false,
                 backgroundColor: '#00c292',
 				borderColor: '#00c292',
-				data: [0, 15, 17, 200, 0, 12, -200, 5, 200, 8, 200, 12, 200],
-				cubicInterpolationMode: 'monotone'
+				data: [5, 5, 5, 5, 5, 5, 5]
             }, {
-                label: "Cubic interpolation",
+                label: "My actual servings",
 				fill: false,
                 backgroundColor: '#fb9678',
 				borderColor: '#fb9678',
-				data: [-100, 200, 12, -200, 12, 200, 8, -200, 9, 200, -200, -12, -200]
+				data: servings
 				
 		}]
 		},
@@ -86,64 +98,7 @@
 			responsive: true,
 			title:{
 				display:true,
-				text:'Line Chart interpolation'
-			},
-			tooltips: {
-				mode: 'index'
-			},
-			scales: {
-				xAxes: [{
-					display: true,
-					scaleLabel: {
-						display: true
-					}
-				}],
-				yAxes: [{
-					display: true,
-					scaleLabel: {
-						display: true,
-						labelString: 'Value'
-					},
-					ticks: {
-						suggestedMin: -10,
-						suggestedMax: 200,
-					}
-				}]
-			}
-		}
-	});
-	
-	
-	/*----------------------------------------*/
-	/*  3.  Line Chart styles
-	/*----------------------------------------*/
-	
-	var ctx = document.getElementById("linechartstyles");
-	var linechartstyles = new Chart(ctx, {
-		type: 'line',
-		data: {
-			labels: ["January", "February", "March"],
-			datasets: [{
-				label: "Unfilled",
-				fill: false,
-                backgroundColor: '#01c0c8',
-				borderColor: '#01c0c8',
-				data: [0, 15, 17, 200, 0, 12]
-            }, {
-                label: "Dashed",
-				fill: false,
-                backgroundColor: '#fb9678',
-				borderColor: '#fb9678',
-				borderDash: [5, 5],
-				data: [-100, 200, 12, -200, 12]
-				
-		}]
-		},
-		options: {
-			responsive: true,
-			title:{
-				display:true,
-				text:'Line Chart Style'
+				text:'Fruit and Vegetable'
 			},
 			tooltips: {
 				mode: 'index',
@@ -158,56 +113,18 @@
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: 'Month'
+						labelString: 'Days'
 					}
 				}],
 				yAxes: [{
 					display: true,
 					scaleLabel: {
 						display: true,
-						labelString: 'Value'
+						labelString: 'Servings'
 					}
 				}]
 			}
 		}
 	});
-	/*----------------------------------------*/
-	/*  4.  Line Chart point circle
-	/*----------------------------------------*/
 	
-	var ctx = document.getElementById("linechartpointcircle");
-	var linechartpointcircle = new Chart(ctx, {
-		type: 'line',
-		data: {
-			labels: ["May", "June", "July"],
-			datasets: [{
-				label: "My First dataset",
-				backgroundColor: '#00c292',
-				borderColor: '#00c292',
-				data: [0, 10, 20, 30, 40, 50, 60],
-				fill: false,
-				pointRadius: 4,
-				pointHoverRadius: 10,
-				showLine: false 
-			}]
-		},
-		options: {
-			responsive: true,
-			title:{
-				display:true,
-				text:'Line Chart Point Circle'
-			},
-			legend: {
-				display: false
-			},
-			elements: {
-				point: {
-					pointStyle: 'circle',
-				}
-			}
-		}
-	});
-	
-	
-		
 })(jQuery); 
