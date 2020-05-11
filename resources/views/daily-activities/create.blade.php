@@ -39,32 +39,32 @@
                             <div class="nk-int-st">
                                 {{Form::label('physical_activity', 'Physical Activity')}}<br />
                                 {{Form::radio('physical_activity', '1')}} Yes
-                                {{Form::radio('physical_activity', '0')}} No
+                                {{Form::radio('physical_activity', '0', true)}} No
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group ic-cmp-int">
-                            <div class="form-ic-cmp">
-                                <i class="notika-icon notika-support"></i>
+                    <div id="physical_hidden" hidden>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group ic-cmp-int">
+                                <div class="form-ic-cmp">
+                                    <i class="notika-icon notika-support"></i>
+                                </div>
+                                <div class="nk-int-st">
+                                    {{Form::number('hours', '',['class' => 'form-control', 'placeholder' => 'Hours'])}}
+                                </div>
                             </div>
-                            <div class="nk-int-st">
-                                {{Form::number('hours', '',['class' => 'form-control', 'placeholder' => 'Hours'])}}
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group ic-cmp-int">
+                                <div class="form-ic-cmp">
+                                    <i class="notika-icon notika-support"></i>
+                                </div>
+                                <div class="nk-int-st">
+                                    {{Form::number('minutes', '',['class' => 'form-control', 'placeholder' => 'Minutes'])}}
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="form-group ic-cmp-int">
-                            <div class="form-ic-cmp">
-                                <i class="notika-icon notika-support"></i>
-                            </div>
-                            <div class="nk-int-st">
-                                {{Form::number('minutes', '',['class' => 'form-control', 'placeholder' => 'Minutes'])}}
-                            </div>
-                        </div>
-                    </div>
-                    
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group ic-cmp-int">
                             <div class="form-ic-cmp">
@@ -74,10 +74,11 @@
                                 <br />
                                 {{Form::label('fruit_vege', 'Fruits and Vegetables')}}<br />
                                 {{Form::radio('fruit_vege', '1')}} Yes
-                                {{Form::radio('fruit_vege', '0')}} No
+                                {{Form::radio('fruit_vege', '0', true)}} No
                             </div>
                         </div>
                     </div>
+                    <div id="servings_hidden" hidden>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group ic-cmp-int">
                             <div class="form-ic-cmp">
@@ -88,6 +89,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group ic-cmp-int">
                             <div class="form-ic-cmp">
@@ -97,7 +99,7 @@
                                 <br />
                                 {{Form::label('smoke', 'Smoke')}}<br />
                                 {{Form::radio('smoke', '1')}} Yes
-                                {{Form::radio('smoke', '0')}} No
+                                {{Form::radio('smoke', '0', true)}} No
                             </div>
                         </div>
                     </div>
@@ -183,5 +185,7 @@
     <!-- main JS
 	    ============================================ -->
         <script src="/js/notika/main.js"></script>
+        
+        <script src="{{ asset('/js/logbook.js?'.uniqid()) }}"></script>
 
 @endpush

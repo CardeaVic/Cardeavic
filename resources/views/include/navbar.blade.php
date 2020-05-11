@@ -1,5 +1,5 @@
 {{-- Navigation bar --}}
-<div class="w3-bar custom-nav">
+<div class="w3-bar custom-nav navbar-fixed-top">
     <a href="/daily-activities" class="w3-bar-item "><img src="/images/CardeaLogoSmall.png" alt="Cardea Logo"
                                                   style="width:auto;height:34px"></a>
     <a href="/home" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">Home</a>

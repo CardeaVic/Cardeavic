@@ -67,7 +67,7 @@
         @include('include.messages')
         @yield('content')
     </div>
-
+    @include('include.footer')
 <!--JavaScript at end of body for optimized loading-->
 
 <!-- Import SurveyJs required js -->
@@ -98,6 +98,11 @@
     <!-- main JS
 	    ============================================ -->
         <script src="/js/notika/main.js"></script>
+    <!-- Charts JS
+		============================================ -->
+        <script src="/js/notika/Chart.js"></script>
+        <script src="/js/notika/line-chart.js"></script>
+        <script src="/js/notika/area-chart.js"></script>
         
 @stack('js')
 </body>
