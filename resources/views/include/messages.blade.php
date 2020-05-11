@@ -1,19 +1,22 @@
+{{-- Error messages --}}
 @if(count($errors) > 0)
     @foreach ($errors->all() as $error)
-        <div class="w3-panel w3-pale-red">
+        <div class="alert alert-danger">
             {{$error}}
         </div>
     @endforeach
 @endif
 
+{{-- Success message --}}
 @if(session('success'))
-    <div class="w3-panel w3-pale-green">
+    <div class="alert alert-success">
         {{session('success')}}
     </div>
 @endif
 
+{{-- Error message --}}
 @if(session('error'))
-    <div class="w3-panel w3-pale-red">
+    <div class="alert alert-danger">
         {{session('error')}}
     </div>
 @endif

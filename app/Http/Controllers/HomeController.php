@@ -25,9 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // Get user id
         $user_id = auth()->user()->id;
+        // Fetching records from db
         $daily_activities = DailyActivity::where('user_id', $user_id)->orderBy('date', 'desc')->take(7)->get();
- 
+        // Passing data to javascript
         JavaScript::put([
             'records' => $daily_activities,
         ]);

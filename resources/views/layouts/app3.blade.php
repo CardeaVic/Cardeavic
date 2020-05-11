@@ -36,24 +36,20 @@
     <!--Import w3css.css-->
     <link rel="stylesheet" href="{{ asset('/css/w3.css') }}">
     <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
+    {{-- Navbar CSS --}}
     <link rel="stylesheet" href="{{ asset("/css/navbar.css?".uniqid()) }}">
-
-        <!-- Bootstrap CSS
-    ============================================ -->
+    {{-- Logbook CSS --}}
+    <link rel="stylesheet" href="{{ asset("/css/logbook.css?".uniqid()) }}">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/notika/bootstrap.min.css">
-    <!-- normalize CSS
-    ============================================ -->
+    <!-- normalize CSS -->
     <link rel="stylesheet" href="/css/notika/normalize.css">
-    <!-- wave CSS
-    ============================================ -->
+    <!-- wave CSS -->
     <link rel="stylesheet" href="/css/notika/waves.min.css">
     <link rel="stylesheet" href="/css/notika/button.css">
-
-    <!-- main CSS
-    ============================================ -->
+    <!-- main CSS -->
     <link rel="stylesheet" href="/css/notika/main.css">
-    <!-- style CSS
-    ============================================ -->
+    <!-- style CSS -->
     <link rel="stylesheet" href="/css/notika/style.css">
     @stack('css')
 
@@ -84,25 +80,18 @@
         }
     }
 </script>
-
-    <!-- jquery
-		============================================ -->
-        <script src="/js/notika/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-		============================================ -->
-        <script src="/js/notika/bootstrap.min.js"></script>
-    <!--  wave JS
-		============================================ -->
-        {{-- <script src="/js/notika/waves.min.js"></script>
-        <script src="/js/notika/wave-active.js"></script> --}}
-    <!-- main JS
-	    ============================================ -->
-        <script src="/js/notika/main.js"></script>
-    <!-- Charts JS
-		============================================ -->
-        <script src="/js/notika/Chart.js"></script>
-        <script src="/js/notika/line-chart.js"></script>
-        <script src="/js/notika/pie-chart.js"></script>
+    {{-- Logbook CSS --}}
+    <script src="{{ asset('/js/logbook.js?'.uniqid()) }}"></script>
+    <!-- jquery -->
+    <script src="/js/notika/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS -->
+    <script src="/js/notika/bootstrap.min.js"></script>
+    <!-- main JS -->
+    <script src="/js/notika/main.js"></script>
+    <!-- Charts JS -->
+    <script src="/js/notika/Chart.js"></script>
+    <script src="/js/notika/line-chart.js"></script>
+    <script src="/js/notika/pie-chart.js"></script>
         
 @stack('js')
 </body>
