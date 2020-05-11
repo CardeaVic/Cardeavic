@@ -20,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
     <style type="text/css">
         .field-icon {
             float: right;
@@ -29,6 +30,7 @@
             z-index:  3 !important;
         }
     </style>
+    @stack('css')
 </head>
 <body>
 <div id="app">
@@ -36,6 +38,7 @@
         @yield('content')
     </main>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
     function showPassword() {
         var x = document.getElementById("password");
@@ -44,7 +47,12 @@
         } else {
             x.type = "password";
         }
-    }
+    };
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
 </script>
+
 </body>
 </html>

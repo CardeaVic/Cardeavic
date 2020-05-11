@@ -25,80 +25,56 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-@stack('meta')
-
-<!-- Import Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Import FontAwesome Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    <!--Import w3css.css-->
-    <link rel="stylesheet" href="{{ asset('/css/w3.css') }}">
-    <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
-    <link rel="stylesheet" href="{{ asset("/css/navbar.css?".uniqid()) }}">
-
-        <!-- Bootstrap CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/bootstrap.min.css">
+    @stack('meta')
+    <!--- ============================================ -->
+    <link rel="stylesheet" href="notika/css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/owl.carousel.css">
+    <link rel="stylesheet" href="notika/css/owl.theme.css">
+    <link rel="stylesheet" href="notika/css/owl.transitions.css">
+    <!-- meanmenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/meanmenu/meanmenu.min.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/animate.css">
     <!-- normalize CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/normalize.css">
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/normalize.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- jvectormap CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <!-- notika icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/notika-custom-icon.css">
     <!-- wave CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/waves.min.css">
-    <link rel="stylesheet" href="/css/notika/button.css">
-
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/wave/waves.min.css">
     <!-- main CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/main.css">
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/main.css">
     <!-- style CSS
-    ============================================ -->
-    <link rel="stylesheet" href="/css/notika/style.css">
+		============================================ -->
+    <link rel="stylesheet" href="notika/style.css?{{uniqid()}}">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="notika/css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="notika/js/vendor/modernizr-2.8.3.min.js"></script>
     @stack('css')
-
-
 </head>
-
 <body>
-    {{--    Including the Navbar --}}
-    @include('include.navbar')
-    <div class="w3-container">
-        @include('include.messages')
-        @yield('content')
-    </div>
-
-<!--JavaScript at end of body for optimized loading-->
-
-<!-- Import SurveyJs required js -->
-<script src="https://unpkg.com/jquery"></script>
-
-{{-- Navbar Hamburger --}}
-<script>
-    function myFunction() {
-        var x = document.getElementById("hamburgerbtn");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-</script>
-
-    <!-- jquery
-		============================================ -->
-        <script src="/js/notika/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-		============================================ -->
-        <script src="/js/notika/bootstrap.min.js"></script>
-    <!--  wave JS
-		============================================ -->
-        {{-- <script src="/js/notika/waves.min.js"></script>
-        <script src="/js/notika/wave-active.js"></script> --}}
-    <!-- main JS
-	    ============================================ -->
-        <script src="/js/notika/main.js"></script>
-        
+@include('include.navbar')
+@yield('content')
+@include('include.footer')
 @stack('js')
 </body>
 </html>

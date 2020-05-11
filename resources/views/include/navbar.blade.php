@@ -1,22 +1,85 @@
-{{-- Navigation bar --}}
-<div class="w3-bar custom-nav">
-    <a href="/daily-activities" class="w3-bar-item "><img src="/images/CardeaLogoSmall.png" alt="Cardea Logo"
-                                                  style="width:auto;height:34px"></a>
-    <a href="/home" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">Home</a>
-    <a href="/daily-activities" class="w3-bar-item w3-button w3-hover-teal w3-xlarge w3-hide-small">Daily log</a>
-    <a href="javascript:void(0)"
-       class="w3-bar-item w3-button w3-xlarge w3-hover-teal w3-right w3-hide-large w3-hide-medium"
-       onclick="myFunction()">&#9776;</a>
-    <a href="logout" class="w3-right">
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button class="w3-bar-item w3-button w3-hover-teal w3-text-white w3-xlarge w3-hide-small w3-right" type="submit">Logout</button>
-        </form>
-    </a>
-</div>
+<div class="header-top-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="logo-area">
+                    <a href="#"><img height="25%" width="25%" src="images/CardeaLogoSmall.png" alt="Cardea Logo" /></a>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="header-top-menu">
+                    <ul class="nav navbar-nav notika-top-nav">
 
-{{-- Hamburger menu --}}
-<div id="hamburgerbtn" class="w3-bar-block w3-large custom-nav w3-hide w3-hide-large w3-hide-medium">
-    <a href="/home" class="w3-bar-item w3-button w3-hover-teal">Home</a>
-    <a href="/daily-activities" class="w3-bar-item w3-button w3-hover-teal">Daily Log</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- End Header Top Area -->
+<!-- Mobile Menu start -->
+<div class="mobile-menu-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                        <ul class="mobile-menu-nav">
+                            <li><a data-toggle="collapse" data-target="#" href="{{ route('home') }}">Home</a>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#" href="#">Daily Activities</a>
+                                <ul id="demoevent" class="collapse dropdown-header-top">
+                                    <li><a href="{{ route('daily-activities.create') }}"> Add Activity</a></li>
+                                    <li><a href="{{ route('daily-activities.index') }}">View Activities</a></li>
+                                </ul>
+                            </li>
+                            <li><a data-toggle="collapse" data-target="#" href="#">Reports</a>
+                                <ul id="demoevent" class="collapse dropdown-header-top">
+                                    <li><a href="#">View Reports</a></li>
+                                    <li><a href="#">Weekly Trends</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mobile Menu end -->
+<!-- Main Menu area start-->
+<div class="main-menu-area mg-tb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                    <li class="active"><a  href="{{ route('home') }}"><i class="notika-icon notika-house"></i> Home</a>
+                    </li>
+                    <li><a data-toggle="tab" href="#daily-activities"><i class="notika-icon notika-form"></i> Daily Activities</a>
+                    </li>
+                    <li><a data-toggle="tab" href="#reports"><i class="notika-icon notika-bar-chart"></i> Reports</a>
+                    </li>
+                </ul>
+                <div class="tab-content custom-menu-content">
+                    <div id="daily-activities" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li><a href="{{ route('daily-activities.create') }}">Add Activity</a>
+                            </li>
+                            <li><a href="{{ route('daily-activities.index') }}">View Activities</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="reports" class="tab-pane notika-tab-menu-bg animated flipInX">
+                        <ul class="notika-main-menu-dropdown">
+                            <li><a href="#">View Reports</a>
+                            </li>
+                            <li><a href="#">Weekly Trends</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Menu area End-->

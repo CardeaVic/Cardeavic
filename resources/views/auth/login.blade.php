@@ -1,7 +1,16 @@
 @extends('layouts.app2')
+@push('css')
+    <link rel="stylesheet" href="{{ asset("/css/cd.welcome.css?".uniqid()) }}">
+@endpush
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    {{--  Logo      --}}
+    <div class="row custom-logo">
+        <div class="col s12 m12 l12">
+            <img class="img-fluid" src="{{asset('/images/CardeaLogoSmall.png')}}">
+        </div>
+    </div>
+    <div class="row justify-content-center z-index-2" style="margin-top: 5%">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -38,7 +47,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <span class="offset-4 col-md-6"><input type="checkbox" onclick="showPassword()"> Show Password</span>
+                            <span class="col-md-6 offset-md-4"><input type="checkbox" onclick="showPassword()"> Show Password</span>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
@@ -54,7 +63,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="login-button">
                                     {{ __('Login') }}
                                 </button>
                             </div>
@@ -64,5 +73,19 @@
             </div>
         </div>
     </div>
+
+    {{-- Background Bubbles       --}}
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </div>
 @endsection
