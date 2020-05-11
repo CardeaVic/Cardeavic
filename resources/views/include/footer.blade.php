@@ -64,8 +64,7 @@
     ============================================ -->
 <script src="notika/js/wave/waves.min.js"></script>
 <script src="notika/js/wave/wave-active.js"></script>
-<!--  todo JS
-    ============================================ -->
+
 <script src="notika/js/todo/jquery.todo.js"></script>
 <!-- plugins JS
     ============================================ -->

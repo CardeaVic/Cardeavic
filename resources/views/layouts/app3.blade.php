@@ -60,11 +60,12 @@
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="notika/css/main.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="notika/style.css?{{uniqid()}}">
+    <!-- style CSS -->
+
+    <link rel="stylesheet" href="notika/style.css">
+
     <!-- responsive CSS
-		============================================ -->
+      ============================================ -->
     <link rel="stylesheet" href="notika/css/responsive.css">
     <!-- modernizr JS
 		============================================ -->

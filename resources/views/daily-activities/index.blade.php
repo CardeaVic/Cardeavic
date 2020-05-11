@@ -54,37 +54,48 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="data-table-list">
                                 <div class="basic-tb-hd">
-                                    <br \><h1 class="w3-center">Your daily log</h1>
+                                    <h1 class="w3-center">Your daily log</h1>
                                     
                                 </div>
                                 <div class="table-responsive">
                                     <table id="data-table-basic" class="table table-striped w3-centered">
                                         <thead>
-                                            <tr class="custom-table-header nk-white" >
+                                            <tr class="custom-table-header nk-white">
                                                 <th class="w3-text-white" style="font-size: 18px;">Date</th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Physical Activity</th>
+                                                <th colspan="2" class="w3-text-white" style="font-size: 18px;">Physical Activity</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Fruit and Vegetables</th>
+                                                <th class="w3-text-white" style="font-size: 18px;">Smoke</th>
+                                                
+                                                <th></th>
+                                                <th style="padding: 0"><a href="/daily-activities/create" class="button">
+                                                    <span class="material-icons" style="font-size:42px; color:white">
+                                                    add_circle_outline
+                                                    </span></a></th>
+                                            </tr>
+                                            <tr class="custom-table-header nk-white" >
+                                                <th></th>
                                                 <th class="w3-text-white" style="font-size: 18px;">Hours</th>
                                                 <th class="w3-text-white" style="font-size: 18px;">Minutes</th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Fruits and Vegetables</th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Servings</th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Smoke</th>
                                                 <th></th>
-                                                <th><a href="/daily-activities/create" class="btn w3-right" style="padding: 0"><i class="far fa-plus-square w3-right" style="font-size:38px; color:white"></i></a></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($daily_activities as $daily_activity)
                                                 <tr>
                                                     <td>{{$daily_activity->date}}</td>
-                                                    <td>{{$daily_activity->physical_activity}}</td>
                                                     <td>{{$daily_activity->hours}}
-                                                        @if($daily_activity->hours == '') - @endif</td>
+                                                        @if($daily_activity->hours == '') 0 @endif</td>
                                                     <td>{{$daily_activity->minutes}} 
-                                                        @if($daily_activity->minutes == '') - @endif</td>
-                                                    <td>{{$daily_activity->fruit_vege}}</td>
+                                                        @if($daily_activity->minutes == '') 0 @endif</td>
                                                     <td>{{$daily_activity->servings}}
-                                                        @if($daily_activity->servings == '') - @endif</td>
-                                                    <td>{{$daily_activity->smoke}}</td>
+                                                        @if($daily_activity->servings == '') 0 @endif</td>
+                                                    <td>@if($daily_activity->smoke == '1') Yes
+                                                        @else No
+                                                        @endif
+                                                    </td>
                                                     <td><a href="/daily-activities/{{$daily_activity->id}}/edit" class="btn btn-info notika-btn-info waves-effect">Edit</td>
                                                     <td>{!! Form::open(['action' => ['DailyActivitiesController@destroy', $daily_activity->id], 'method' => 'POST']) !!}
                                                             {{Form::hidden('_method', 'DELETE')}}
@@ -102,7 +113,11 @@
                 </div>
             </div>
         @else
-            <p>No activites found</p>
+            <p>No activites found - Add one</p>
+            <a href="/daily-activities/create" class="button">
+                <span class="material-icons" style="font-size:42px;">
+                add_circle_outline
+                </span></a>
         @endif
 
     </div>

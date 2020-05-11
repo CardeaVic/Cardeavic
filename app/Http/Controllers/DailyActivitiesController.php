@@ -25,7 +25,7 @@ class DailyActivitiesController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
-        $daily_activities = DailyActivity::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(10);
+        $daily_activities = DailyActivity::where('user_id', $user_id)->orderBy('date', 'desc')->paginate(10);
  
         return view('daily-activities.index')->with('daily_activities', $daily_activities);
     }

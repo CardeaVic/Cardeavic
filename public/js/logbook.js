@@ -1,12 +1,15 @@
-// $(document).ready(function($) {
-//     $(".clickable-row").click(function() {
-//         window.document.location = $(this).data("href");
-//     });
-// });
+$("input[name='physical_activity']").change(function(){
+    var x = document.getElementById("physical_hidden");
+    if (x.className.indexOf("w3-show") == -1){
+        x.className += " w3-show";
+    }else
+        x.className = x.className.replace(" w3-show", "");
+});
 
-$('.datepicker').datepicker({
-    format: 'mm/dd/yyyy',
-    startDate: '-3d',
-    autoclose: true,
-    defaultViewDate: today
+$("input[name='fruit_vege']").change(function(){
+    var x = document.getElementById("servings_hidden");
+    if (x.className.indexOf("w3-show") == -1){
+        x.className += " w3-show";
+    }else
+        x.className = x.className.replace(" w3-show", "");
 });
