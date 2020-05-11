@@ -3,6 +3,11 @@
     color: white;
 }
 
+.custom-footer {
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%) fixed;
+    color: white;
+}
+
 /* .footer{
     position: fixed;
     bottom: 0;
@@ -19,3 +24,4 @@
 a:hover{
     text-decoration: none !important;
 }
+

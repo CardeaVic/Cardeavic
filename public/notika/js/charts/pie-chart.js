@@ -10,7 +10,7 @@ for(record in records_list){
 
 var ctx = document.getElementById("piechart");
 var myPieChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
         labels: ["Not Smoked", "Smoked"],
         datasets: [{
