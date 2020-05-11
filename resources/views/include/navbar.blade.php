@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="logo-area">
-                    <a href="#"><img height="25%" width="25%" src="images/CardeaLogoSmall.png" alt="Cardea Logo" /></a>
+                    <a href="#"><img height="25%" width="25%" src="{{ asset('images/CardeaLogoSmall.png') }}" alt="Cardea Logo" /></a>
                 </div>
             </div>
         </div>

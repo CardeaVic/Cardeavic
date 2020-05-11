@@ -7,6 +7,7 @@
 @section('content')
     {{-- Main Container for Dashboard--}}
     <div class="container">
+        {{-- Pie chart --}}
         <div class="area-chart-area">
             <div class="container">
                 <div class="row">
@@ -18,16 +19,19 @@
                 </div>
             </div>
         </div>
+        {{-- Line charts --}}
         <div class="line-chart-area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="line-chart-wp chart-display-nn">
+                            {{-- Physical Activity Chart --}}
                             <canvas height="140vh" width="180vw" id="physical_activity_chart"></canvas>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="line-chart-wp sm-res-mg-t-30 chart-display-nn">
+                            {{-- Servings Chart --}}
                             <canvas height="140vh" width="180vw" id="fruit_vege_chart"></canvas>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app3')
 {{--Css Imports--}}
 @push('css')
-
+    <link rel="stylesheet" href="{{ asset("/css/logbook.css?".uniqid()) }}">
 @endpush
 
 @section('content')
@@ -30,7 +30,7 @@
                                                 <th></th>
                                                 {{-- Plus icon --}}
                                                 <th style="padding: 0"><a href="/daily-activities/create" class="button">
-                                                    <span class="material-icons" style="font-size:42px; color:white">
+                                                    <span class="fas fa-plus-circle" style="font-size:42px; color:white">
                                                     add_circle_outline
                                                     </span></a></th>
                                             </tr>
@@ -78,10 +78,7 @@
         @else
             {{-- Else condition when no records founds --}}
             <p>No activites found - Add one</p>
-            <a href="/daily-activities/create" class="button">
-                <span class="material-icons" style="font-size:42px;">
-                add_circle_outline
-                </span></a>
+            <a href="/daily-activities/create" class="button"><i class="fas fa-plus-circle"></i></a>
         @endif
     </div>
     {{-- Main Container ends --}}

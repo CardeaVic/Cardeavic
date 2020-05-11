@@ -27,49 +27,49 @@
     <meta name="theme-color" content="#ffffff">
     @stack('meta')
     <!--- ============================================ -->
-    <link rel="stylesheet" href="notika/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/bootstrap.min.css') }}">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/font-awesome.min.css') }}">
     <!-- owl.carousel CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/owl.carousel.css">
-    <link rel="stylesheet" href="notika/css/owl.theme.css">
-    <link rel="stylesheet" href="notika/css/owl.transitions.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('notika/css/owl.theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('notika/css/owl.transitions.css') }}">
     <!-- meanmenu CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/meanmenu/meanmenu.min.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/meanmenu/meanmenu.min.css') }}">
     <!-- animate CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/animate.css') }}">
     <!-- normalize CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/normalize.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/normalize.css') }}">
     <!-- mCustomScrollbar CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/scrollbar/jquery.mCustomScrollbar.min.css') }}">
     <!-- jvectormap CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/jvectormap/jquery-jvectormap-2.0.3.css') }}">
     <!-- notika icon CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/notika-custom-icon.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/notika-custom-icon.css') }}">
     <!-- wave CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/wave/waves.min.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/wave/waves.min.css') }}">
     <!-- main CSS
 		============================================ -->
-    <link rel="stylesheet" href="notika/css/main.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/main.css') }}">
     <!-- style CSS -->
 
-    <link rel="stylesheet" href="notika/style.css">
+    <link rel="stylesheet" href="{{ asset('notika/style.css') }}">
 
     <!-- responsive CSS
       ============================================ -->
-    <link rel="stylesheet" href="notika/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('notika/css/responsive.css') }}">
     <!-- modernizr JS
 		============================================ -->
-    <script src="notika/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{ asset('notika/js/vendor/modernizr-2.8.3.min.js') }}"></script>
     @stack('css')
 </head>
 <body>

@@ -1,7 +1,7 @@
 @extends('layouts.app3')
 {{--Css Imports--}}
-@push('css')    
-
+@push('css')
+    <link rel="stylesheet" href="{{ asset("/css/logbook.css?".uniqid()) }}">
 @endpush
 
 @section('content')
@@ -126,5 +126,5 @@
 @endsection
 
 @push('js')
-
+    <script src="{{ asset('js/logbook.js?'.uniqid()) }}"></script>
 @endpush

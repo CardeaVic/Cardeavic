@@ -2,7 +2,6 @@
 {{--Css Imports--}}
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/logbook.css?".uniqid()) }}">
-
 @endpush
 
 @section('content')
@@ -25,7 +24,7 @@
                                 @if ($daily_activity->physical_activity == 1)
                                     {{Form::radio('physical_activity', '1', true)}} Yes
                                     {{Form::radio('physical_activity', '0')}} No
-                                @else 
+                                @else
                                     {{Form::radio('physical_activity', '1')}} Yes
                                     {{Form::radio('physical_activity', '0', true)}} No
                                 @endif
@@ -64,7 +63,7 @@
                                 @if ($daily_activity->fruit_vege == 1)
                                     {{Form::radio('fruit_vege', '1', true)}} Yes
                                     {{Form::radio('fruit_vege', '0')}} No
-                                @else 
+                                @else
                                     {{Form::radio('fruit_vege', '1')}} Yes
                                     {{Form::radio('fruit_vege', '0', true)}} No
                                 @endif
@@ -93,7 +92,7 @@
                                 @if ($daily_activity->smoke == 1)
                                     {{Form::radio('smoke', '1', true)}} Yes
                                     {{Form::radio('smoke', '0')}} No
-                                @else 
+                                @else
                                     {{Form::radio('smoke', '1')}} Yes
                                     {{Form::radio('smoke', '0', true)}} No
                                 @endif
