@@ -2,86 +2,149 @@
 {{--Css Imports--}}
 @push('css')
     <link rel="stylesheet" href="{{ asset("/css/logbook.css?".uniqid()) }}">
+    <style>
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table caption {
+            font-size: 1.5em;
+            margin: .5em 0 .75em;
+        }
+
+        table tr {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: .35em;
+        }
+
+        table th,
+        table td {
+            padding: .625em;
+            text-align: center;
+        }
+
+        table th {
+            font-size: .85em;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            table td::before {
+                /*
+                * aria-label has no advantage, it won't be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            table td:last-child {
+                border-bottom: 0;
+            }
+        }
+    </style>
 @endpush
 
 @section('content')
-    {{-- Main Container for Daily log --}}
-    <div class="w3-container">
-        {{-- If statement for daily log --}}
-        @if(count($daily_activities) > 0)
-            <div class="data-table-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="data-table-list">
-                                <div class="basic-tb-hd">
-                                    <h1 class="w3-center">Your daily log</h1>
-                                </div>
-                                {{-- Table for daily activities --}}
-                                <div class="table-responsive">
-                                    <table id="data-table-basic" class="table table-striped w3-centered">
-                                        {{-- Table headers --}}
-                                        <thead>
-                                            <tr class="custom-table-header nk-white">
-                                                <th class="w3-text-white" style="font-size: 18px;">Date</th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Physical Activity</th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Fruit and Vegetables</th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Smoke</th>
-                                                <th></th>
-                                                {{-- Plus icon --}}
-                                                <th style="padding: 0"><a href="/daily-activities/create" class="button">
-                                                    <span class="fas fa-plus-circle" style="font-size:42px; color:white">
-                                                    add_circle_outline
-                                                    </span></a></th>
-                                            </tr>
-                                            <tr class="custom-table-header nk-white" >
-                                                <th></th>
-                                                <th class="w3-text-white" style="font-size: 18px;">Minutes</th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        {{-- Table body --}}
-                                        <tbody>
-                                            @foreach($daily_activities as $daily_activity)
-                                                {{-- Table rows --}}
-                                                <tr>
-                                                    <td>{{ $daily_activity->date }}</td>
-                                                    <td>{{ $daily_activity->minutes + $daily_activity->hours * 60 }}
-                                                        @if( $daily_activity->minutes == '' ) 0 @endif</td>
-                                                    <td>{{ $daily_activity->servings}}
-                                                        @if( $daily_activity->servings == '' ) 0 @endif</td>
-                                                    <td>@if( $daily_activity->smoke == '1' ) Yes
-                                                        @else No
-                                                        @endif
-                                                    </td>
-                                                    {{-- Edit button --}}
-                                                    <td><a href="/daily-activities/{{$daily_activity->id}}/edit" class="btn btn-info notika-btn-info waves-effect">Edit</td>
-                                                    {{-- Delete button --}}
-                                                    <td>{!! Form::open(['action' => ['DailyActivitiesController@destroy', $daily_activity->id], 'method' => 'POST']) !!}
-                                                            {{Form::hidden('_method', 'DELETE')}}
-                                                            {{Form::submit('Delete', ['class' => 'btn btn-danger notika-btn-danger waves-effect'])}}
-                                                        {!! Form::close() !!}</td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                    {{ $daily_activities->links() }}
-                                </div>
-                            </div>
-                        </div>
+    <div class="container" style="margin-top: 10%">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card ">
+                    <div class="card-header">
+                        Daily Activities
+                    </div>
+                    <div class="card-body">
+                        @if($daily_activities -> count() > 0)
+                            <table width="100%">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Physical Activity(Minutes)</th>
+                                    <th scope="col">Fruit and Vegetable Servings</th>
+                                    <th scope="col">Smoking</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($daily_activities as $daily_activity)
+                                    <tr>
+                                        <td data-label="Date">{{ $daily_activity -> date -> format('d-m-Y') }}</td>
+
+                                        @if($daily_activity -> physical_activity == 1)
+                                            @php($minutes = ($daily_activity -> hours)*60 + ($daily_activity -> minutes))
+                                            <td data-label="Physical Activity">{{ $minutes}}</td>
+                                        @else
+                                            <td data-label="Physical Activity">0</td>
+                                        @endif
+
+                                        @if($daily_activity -> fruit_vege == 1)
+                                            <td data-label="Fruits and Vegetables">{{ $daily_activity -> servings}}</td>
+                                        @else
+                                            <td data-label="Fruits and Vegetables">0</td>
+                                        @endif
+
+                                        @if($daily_activity -> smoke == 1)
+                                            <td data-label="Smoking">Yes</td>
+                                        @else
+                                            <td data-label="Smoking">No</td>
+                                        @endif
+
+                                        <td data-label="Edit"><button class="btn btn-primary">Edit</button></td>
+                                        <td data-label="Delete"><button class="btn btn-danger">Delete</button></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        @else
+                            <h3>You have note entered any Daily Activities.</h3>
+                        @endif
                     </div>
                 </div>
             </div>
-        @else
-            {{-- Else condition when no records founds --}}
-            <p>No activites found - Add one</p>
-            <a href="/daily-activities/create" class="button"><i class="fas fa-plus-circle"></i></a>
-        @endif
+        </div>
     </div>
-    {{-- Main Container ends --}}
 @endsection
 
 @push('js')
