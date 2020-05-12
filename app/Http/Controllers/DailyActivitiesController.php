@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\DailyActivity;
+use Carbon\Carbon;
+use Validator;
 
 class DailyActivitiesController extends Controller
 {
@@ -50,27 +52,32 @@ class DailyActivitiesController extends Controller
     public function store(Request $request)
     {
         // Validate the input
-        $this->validate($request,[
+        $validator = Validator::make($request->all(),[
             'physical_activity' => 'required',
             'hours' => 'nullable|integer|between:0,24',
             'minutes' => 'nullable|integer|between:0,60',
-            'fruit_vege' => 'required',
-            'servings' => 'nullable|integer|between:0,99',
-            'smoke' => 'required',
+            'fruits_veges' => 'required',
+            'fruit_vege' => 'nullable|integer|between:0,20',
+            'smoking' => 'required',
             'date' => 'required|unique:daily_activities,date,NULL,id,user_id,'.\Auth::id()
         ]);
+
+        if ($validator->fails()){
+            return redirect('daily-activities/create')->withErrors($validator)->withInput();
+        }
         //https://laracasts.com/discuss/channels/laravel/unique-validation-depend-on-the-user-id?page=1
 
         // Create new object and assign their values from form input
         $daily_activity = new DailyActivity;
         $daily_activity->user_id = auth()->user()->id;
-        $daily_activity->date = $request->input('date');
         $daily_activity->physical_activity = $request->input('physical_activity');
         $daily_activity->hours = $request->input('hours');
         $daily_activity->minutes = $request->input('minutes');
-        $daily_activity->fruit_vege = $request->input('fruit_vege');
-        $daily_activity->servings = $request->input('servings');
-        $daily_activity->smoke = $request->input('smoke');
+        $daily_activity->fruit_vege = $request->input('fruits_veges');
+        $daily_activity->servings = $request->input('fruit_vege');
+        $daily_activity->smoke = $request->input('smoking');
+        $date = str_replace("/","-",$request->input('date'));
+        $daily_activity->date = Carbon::parse($date)->format('Y-m-d');
         // Save the record in database
         $daily_activity->save();
 
@@ -123,9 +130,9 @@ class DailyActivitiesController extends Controller
             'physical_activity' => 'required',
             'hours' => 'nullable|integer|between:0,24',
             'minutes' => 'nullable|integer|between:0,60',
-            'fruit_vege' => 'required',
-            'servings' => 'nullable|integer|between:0,99',
-            'smoke' => 'required'
+            'fruits_veges' => 'required',
+            'fruit_vege' => 'nullable|integer|between:0,99',
+            'smoking' => 'required'
         ]);
         
         // Update the record based on the id
@@ -133,9 +140,9 @@ class DailyActivitiesController extends Controller
         $daily_activity->physical_activity = $request->input('physical_activity');
         $daily_activity->hours = $request->input('hours');
         $daily_activity->minutes = $request->input('minutes');
-        $daily_activity->fruit_vege = $request->input('fruit_vege');
-        $daily_activity->servings = $request->input('servings');
-        $daily_activity->smoke = $request->input('smoke');
+        $daily_activity->fruit_vege = $request->input('fruits_veges');
+        $daily_activity->servings = $request->input('fruit_vege');
+        $daily_activity->smoke = $request->input('smoking');
         // Save the record in database
         $daily_activity->save();
 

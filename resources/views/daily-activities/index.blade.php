@@ -49,8 +49,7 @@
                                                 {{-- Table rows --}}
                                                 <tr>
                                                     <td>{{ $daily_activity->date }}</td>
-                                                    <td>{{ $daily_activity->minutes + $daily_activity->hours * 60 }}
-                                                        @if( $daily_activity->minutes == '' ) 0 @endif</td>
+                                                    <td>{{ $daily_activity->minutes + $daily_activity->hours * 60 }}</td>
                                                     <td>{{ $daily_activity->servings}}
                                                         @if( $daily_activity->servings == '' ) 0 @endif</td>
                                                     <td>@if( $daily_activity->smoke == '1' ) Yes
