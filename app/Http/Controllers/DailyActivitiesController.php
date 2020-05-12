@@ -28,7 +28,6 @@ class DailyActivitiesController extends Controller
     {
         $user_id = auth()->user()->id;
         $daily_activities = DailyActivity::where('user_id', $user_id)->orderBy('date', 'desc')->paginate(10);
- 
         return view('daily-activities.index')->with('daily_activities', $daily_activities);
     }
 
@@ -84,7 +83,7 @@ class DailyActivitiesController extends Controller
         return redirect('daily-activities')->with('success', 'Activity added');
 
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -134,7 +133,7 @@ class DailyActivitiesController extends Controller
             'fruit_vege' => 'nullable|integer|between:0,99',
             'smoking' => 'required'
         ]);
-        
+
         // Update the record based on the id
         $daily_activity = DailyActivity::find($id);
         $daily_activity->physical_activity = $request->input('physical_activity');

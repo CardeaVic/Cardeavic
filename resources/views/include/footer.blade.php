@@ -1,5 +1,5 @@
 <!-- Start Footer area-->
-<div class="footer-copyright-area navbar-fixed-bottom" >
+<div class="footer-copyright-area navbar navbar-default navbar-static-bottom navbar-fixed-bottom">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DailyActivity extends Model
 {
+    protected $dates = ['date'];
     // Table Name
     protected $table = 'daily_activities';
 
