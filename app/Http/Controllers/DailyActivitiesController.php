@@ -66,14 +66,25 @@ class DailyActivitiesController extends Controller
         }
         //https://laracasts.com/discuss/channels/laravel/unique-validation-depend-on-the-user-id?page=1
 
+
+
         // Create new object and assign their values from form input
         $daily_activity = new DailyActivity;
         $daily_activity->user_id = auth()->user()->id;
         $daily_activity->physical_activity = $request->input('physical_activity');
-        $daily_activity->hours = $request->input('hours');
-        $daily_activity->minutes = $request->input('minutes');
+        if($request->input('physical_activity') == 0){
+            $daily_activity->hours = 0;
+            $daily_activity->minutes = 0;
+        }else{
+            $daily_activity->hours = $request->input('hours');
+            $daily_activity->minutes = $request->input('minutes');
+        }
         $daily_activity->fruit_vege = $request->input('fruits_veges');
-        $daily_activity->servings = $request->input('fruit_vege');
+        if($request->input('fruits_veges') == 0){
+            $daily_activity->servings = 0;
+        }else{
+            $daily_activity->servings = $request->input('fruit_vege');
+        }
         $daily_activity->smoke = $request->input('smoking');
         $date = str_replace("/","-",$request->input('date'));
         $daily_activity->date = Carbon::parse($date)->format('Y-m-d');
@@ -137,10 +148,19 @@ class DailyActivitiesController extends Controller
         // Update the record based on the id
         $daily_activity = DailyActivity::find($id);
         $daily_activity->physical_activity = $request->input('physical_activity');
-        $daily_activity->hours = $request->input('hours');
-        $daily_activity->minutes = $request->input('minutes');
+        if($request->input('physical_activity') == 0){
+            $daily_activity->hours = 0;
+            $daily_activity->minutes = 0;
+        }else{
+            $daily_activity->hours = $request->input('hours');
+            $daily_activity->minutes = $request->input('minutes');
+        }
         $daily_activity->fruit_vege = $request->input('fruits_veges');
-        $daily_activity->servings = $request->input('fruit_vege');
+        if($request->input('fruits_veges') == 0){
+            $daily_activity->servings = 0;
+        }else{
+            $daily_activity->servings = $request->input('fruit_vege');
+        }
         $daily_activity->smoke = $request->input('smoking');
         // Save the record in database
         $daily_activity->save();
