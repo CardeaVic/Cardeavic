@@ -131,14 +131,24 @@
                                             <td data-label="Smoking">No</td>
                                         @endif
 
-                                        <td data-label="Edit"><button class="btn btn-primary">Edit</button></td>
-                                        <td data-label="Delete"><button class="btn btn-danger">Delete</button></td>
+                                        <td data-label="Edit"><a href="/daily-activities/{{$daily_activity->id}}/edit" class="btn btn-primary">
+                                            Edit</a></td>
+                                        <td data-label="Delete">
+                                            <form action="{{ route('daily-activities.destroy', $daily_activity->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+
+                                        </td>
                                     </tr>
                                 @endforeach
+                                
                                 </tbody>
                             </table>
+                            <div class="float-right" style="margin-top: 8px">{{ $daily_activities->links() }}</div>
                         @else
-                            <h3>You have note entered any Daily Activities.</h3>
+                            <h3>You have not entered any Daily Activities.</h3>
                         @endif
                     </div>
                 </div>
