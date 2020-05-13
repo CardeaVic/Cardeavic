@@ -1,7 +1,7 @@
 
 /*Setting Open Sans Font on the entire website*/
 body {
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 /* Css effect is at z index 1 putting everything above it*/

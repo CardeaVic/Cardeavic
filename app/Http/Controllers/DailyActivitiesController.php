@@ -141,7 +141,7 @@ class DailyActivitiesController extends Controller
             'hours' => 'nullable|integer|between:0,24',
             'minutes' => 'nullable|integer|between:0,60',
             'fruits_veges' => 'required',
-            'fruit_vege' => 'nullable|integer|between:0,99',
+            'fruit_vege' => 'nullable|integer|between:0,20',
             'smoking' => 'required'
         ]);
 
