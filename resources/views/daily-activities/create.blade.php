@@ -55,7 +55,7 @@
 @section('content')
     <div class="container" style="margin-top: 5%">
         @if(count($errors) > 0)
-            <div class="alert alert-danger">    
+            <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
                     <li>{{$error}}</li>
@@ -75,7 +75,7 @@
                             <div class="form-group row">
                                 <label for="date" class="col-md-4 col-form-label text-md-right">Date</label>
                                 <div class="datepicker date input-group p-0 shadow-sm col-md-6">
-                                    <input id="datepicker" name="date" type="text" placeholder="Choose Activity Date" class="form-control  @error('email') is-invalid @enderror" id="activityDate">
+                                    <input autocomplete="off" id="datepicker" name="date" type="text" placeholder="Choose Activity Date" class="form-control   @error('email') is-invalid @enderror" id="activityDate">
                                     <div class="input-group-append"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></div>
                                 </div>
                             </div>
@@ -97,12 +97,12 @@
                             <div class="form-group row" id="physical_hidden" style="display: none">
                                 <label for="physical_hours" class="col-md-4 col-form-label text-md-right">Hours</label>
                                 <div class="col-md-3">
-                                    <input id="hours" placeholder="Hours" type="number" min="0" max="24" class="form-control input-group @error('hours') is-invalid @enderror" name="hours">
+                                    <input id="hours" placeholder="Hours" type="number" min="0" max="24" value="0" class="form-control input-group @error('hours') is-invalid @enderror" name="hours">
                                 </div>
 
                                 <label for="physical_minutes" class="col-md-2 col-form-label text-md-center">Minutes</label>
                                 <div class="col-md-3">
-                                    <input id="minutes" placeholder="Minutes" type="number" min="0" max="60" class="form-control input-group @error('minutes') is-invalid @enderror" name="minutes">
+                                    <input id="minutes" placeholder="Minutes" type="number" min="0" max="60" value="0" class="form-control input-group @error('minutes') is-invalid @enderror" name="minutes">
                                 </div>
                             </div>
 
@@ -123,7 +123,7 @@
                             <div class="form-group row" id="servings_hidden" style="display: none">
                                 <label for="fruit_vege" class="col-md-4 col-form-label text-md-right">How Many Servings?</label>
                                 <div class="col-md-6">
-                                    <input id="fruit_vege" placeholder="Servings" type="number" min="0" max="20" class="form-control input-group @error('fruit_vege') is-invalid @enderror" name="fruit_vege">
+                                    <input id="fruit_vege" placeholder="Servings" type="number" min="0" max="20" value="0" class="form-control input-group @error('fruit_vege') is-invalid @enderror" name="fruit_vege">
                                 </div>
                             </div>
 
@@ -144,7 +144,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary" style="background-color: #53b3a6; border: none">
-                                        
+
                                         {{ __('Submit') }}
                                     </button>
                                 </div>
@@ -177,15 +177,16 @@
                 clearBtn: true,
                 todayHighlight: true,
                 format: "dd/mm/yyyy",
-                startDate: "-3d",
+                startDate: "-15d",
                 endDate: new Date(),
                 stepMonths: 0,
                 minViewMode: 0,
                 maxViewMode: 0,
-                duration: "fast",
-                setDate: new Date()
+                setDate: new Date(),
+                calendarWeeks: true,
+                autoclose: true,
             });
-            $('#datepicker').val(todayDate);
         });
+
     </script>
 @endpush

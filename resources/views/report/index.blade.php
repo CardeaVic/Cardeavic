@@ -90,55 +90,34 @@
     <div class="container" style="margin-top: 10%">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <button class="btn btn-primary" style="background-color: #53b3a6; border: none" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>
                 <div class="card" style="margin-top: 2%">
                     <div class="card-header">
-                        Daily Activities
+                        Weekly Reports
                     </div>
                     <div class="card-body">
-                        @if($daily_activities -> count() > 0)
+                        @php($i = 1)
+                        @if(count($sundaysWeeks) > 0)
                             <table width="100%">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Physical Activity(Minutes)</th>
-                                    <th scope="col">Fruit and Vegetable Servings</th>
-                                    <th scope="col">Smoking</th>
-                                    <th scope="col">Edit</th>
-                                    <th scope="col">Delete</th>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">View Report</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($daily_activities as $daily_activity)
+                                @foreach($sundaysWeeks as $sundaysWeek)
                                     <tr>
-                                        <td data-label="Date">{{ $daily_activity -> date -> format('d-m-Y') }}</td>
-
-                                        @if($daily_activity -> physical_activity == 1)
-                                            @php($minutes = ($daily_activity -> hours)*60 + ($daily_activity -> minutes))
-                                            <td data-label="Physical Activity">{{ $minutes}}</td>
-                                        @else
-                                            <td data-label="Physical Activity">0</td>
-                                        @endif
-
-                                        @if($daily_activity -> fruit_vege == 1)
-                                            <td data-label="Fruits and Vegetables">{{ $daily_activity -> servings}}</td>
-                                        @else
-                                            <td data-label="Fruits and Vegetables">0</td>
-                                        @endif
-
-                                        @if($daily_activity -> smoke == 1)
-                                            <td data-label="Smoking">Yes</td>
-                                        @else
-                                            <td data-label="Smoking">No</td>
-                                        @endif
-
-                                        <td data-label="Edit"><a href="/daily-activities/{{$daily_activity->id}}/edit" class="btn btn-primary" style="background-color: #53b3a6; border: none">
-                                            Edit</a></td>
-                                        <td data-label="Delete">
-                                            <form action="{{ route('daily-activities.destroy', $daily_activity->id) }}" method="POST">
+                                        <td data-label="Id">{{ $i  }}</td>
+                                        <td data-label="Start Date">{{ $sundaysWeek['weekStartDate'] -> format('d/m/Y') }}</td>
+                                        <td data-label="End Date">{{ $sundaysWeek['weekEndDate'] -> format('d/m/Y') }}</td>
+                                        <td data-label="View">
+                                            <form action="{{ route('report.view') }}" method="POST">
                                                 @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <input name="startDate" value="{{ $sundaysWeek['weekStartDate'] }}" hidden>
+                                                <input name="endDate" value="{{ $sundaysWeek['weekEndDate'] }}" hidden>
+                                                <button type="submit" class="btn btn-primary" style="background-color: #53b3a6; border: none">View</button>
                                             </form>
 
                                         </td>
@@ -147,9 +126,8 @@
 
                                 </tbody>
                             </table>
-                            <div class="float-right" style="margin-top: 8px">{{ $daily_activities->links() }}</div>
                         @else
-                            <h3>You have not entered any Daily Activities.</h3>
+                            <h3>You have not have any weekly reports ready.</h3>
                         @endif
                     </div>
                 </div>

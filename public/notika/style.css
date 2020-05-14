@@ -3360,11 +3360,11 @@ textarea.auto-size {
     color: #333;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-	width: 250px;
+	width: 310px;
 }
 .datepicker-days  .table-condensed thead tr{
 	background:#fff;
-	color: #fff;
+	color: black;
     margin-left: 2px;
 }
 .datepicker-days  .table-condensed thead tr:first-child{
@@ -3372,6 +3372,7 @@ textarea.auto-size {
 }
 .datepicker-days .table-condensed thead tr:last-child {
     background: #fff;
+    color: black;
     height: 40px;
 }
 .datepicker-days .table-condensed thead tr th:first-child {
@@ -3396,8 +3397,8 @@ textarea.auto-size {
 	border-radius:0px;
 }
 .datepicker table {
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 .datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
     padding: 5px 3px;

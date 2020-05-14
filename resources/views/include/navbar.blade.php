@@ -5,6 +5,10 @@
                 <div class="logo-area">
                     <a href="#"><img height="25%" width="25%" src="{{ asset('images/CardeaLogoSmall.png') }}" alt="Cardea Logo" /></a>
                 </div>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" data-toggle="collapse" data-target="#" href="#">Logout</button>
+                </form>
             </div>
         </div>
     </div>
@@ -26,9 +30,9 @@
                                     <li><a href="{{ route('daily-activities.index') }}">View Activities</a></li>
                                 </ul>
                             </li>
-                            <li><a data-toggle="collapse" data-target="#" href="#">Reports</a>
+                            <li>
                                 <ul id="demoevent" class="collapse dropdown-header-top">
-                                    <li><a href="#">View Reports</a></li>
+                                    <li><a href="{{ route('report.index') }}">View Reports</a></li>
                                     <li><a href="#">Weekly Trends</a></li>
                                 </ul>
                             </li>
@@ -64,7 +68,7 @@
                     </div>
                     <div id="reports" class="tab-pane notika-tab-menu-bg animated flipInX">
                         <ul class="notika-main-menu-dropdown">
-                            <li><a href="#">View Reports</a>
+                            <li><a href="{{ route('report.index') }}">View Reports</a>
                             </li>
                             <li><a href="#">Weekly Trends</a>
                             </li>
