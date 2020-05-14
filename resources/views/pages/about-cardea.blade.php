@@ -68,15 +68,6 @@
       </div>
         <div class="w3-row verticle-align-center w3-center z-index-2" style="margin-top: 32px">
             <div class="w3-col l12 s12 m12 w3-center">
-                
-                {{-- <p class="small-text-center">We at CARDEA provide a daily Log book feature for recording your 
-                    lifestyle habits.</p>
-                <p class="small-text-center">Logging your daily life style habits will help us to generate a 
-                    personalized report about your Cardiovascular Health.</p>
-                <p class="small-text-center">The log book primarily focuses on your eating habits, physical 
-                    activity and smoking status if any. </p>
-                <p class="small-text-center">The log book feature will enable a personalized dashboard for 
-                    tracking the trends in your daily habits.</p> --}}
                 <button type="button" class="w3-round custom-button-login" onclick="window.location.href = 'login'">
                     Login
                 </button>

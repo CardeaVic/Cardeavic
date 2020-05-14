@@ -53,7 +53,7 @@
 @endpush
 
 @section('content')
-    <div class="container" style="margin-top: 5%">
+    <div class="container" style="margin-top: 5%;flex: 1 0 auto;">
         @if(count($errors) > 0)
             <div class="alert alert-danger">    
                 <ul>
@@ -76,7 +76,7 @@
                                 <label for="date" class="col-md-4 col-form-label text-md-right">Date</label>
                                 <div class="datepicker date input-group p-0 shadow-sm col-md-6">
                                     <input id="datepicker" name="date" type="text" placeholder="Choose Activity Date" class="form-control  @error('email') is-invalid @enderror" id="activityDate">
-                                    <div class="input-group-append"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></div>
+                                    <div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
                                 </div>
                             </div>
 

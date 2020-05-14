@@ -6,7 +6,7 @@
 
 @section('content')
     {{-- Main Container for Dashboard--}}
-    <div class="container">
+    <div class="container" style="flex: 1 0 auto;">
         {{-- Pie chart --}}
         <div class="area-chart-area">
             <div class="container">
