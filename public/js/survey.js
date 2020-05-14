@@ -252,5 +252,6 @@ survey
         document.surveyForm.submit();
     });
 
+Survey.surveyStrings.questionsProgressText = "{0}/11 questions"
 
 $("#surveyElement").Survey({model: survey, css: myCss});
