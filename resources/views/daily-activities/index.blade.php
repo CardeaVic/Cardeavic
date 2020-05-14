@@ -87,7 +87,7 @@
 @endpush
 
 @section('content')
-    <div class="container" style="margin-top: 10%">
+    <div class="container" style="flex: 1 0 auto;" >
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <button class="btn btn-primary" style="background-color: #53b3a6; border: none" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>

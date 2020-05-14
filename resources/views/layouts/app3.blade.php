@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="height: 100%;">
 <head>
 
     <title>{{config('app.name', 'Cardea')}}</title>
@@ -72,10 +72,11 @@
     <script src="{{ asset('notika/js/vendor/modernizr-2.8.3.min.js') }}"></script>
     @stack('css')
 </head>
-<body>
+<body class="d-flex flex-column" style="height: 100%;">
 @include('include.navbar')
 @yield('content')
 @include('include.footer')
 @stack('js')
 </body>
+
 </html>
