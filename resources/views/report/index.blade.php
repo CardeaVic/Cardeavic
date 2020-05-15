@@ -128,7 +128,7 @@
                                 </tbody>
                             </table>
                         @else
-                            <h3>You have not have any weekly reports ready.</h3>
+                            <h3>You do not have any weekly reports ready</h3>
                         @endif
                     </div>
                 </div>

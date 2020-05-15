@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="margin-top: 1% !important;">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="margin-top: 1% !important; margin-left: 8%">
                 <div class="header-top-menu">
                     <ul class="nav navbar-nav notika-top-nav">
                         <li class="nav-item">
