@@ -27,7 +27,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4" style="text-align: center">
-                        <div class="card">
+                        <div class="card" style="height: 100%">
                             <div class="card-header">
                                 Physical Activity
                             </div>
@@ -56,8 +56,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4" style="text-align: center">
-                        <div class="card">
+                    <div class="col-md-4" style="text-align: center;">
+                        <div class="card" style=" height: 100%">
                             <div class="card-header">
                                 Nutrition
                             </div>
