@@ -16,7 +16,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container" style="flex: 1 0 auto;">
         <div class="row">
             <div class="card justify-content-center welcome-msg rounded" style="width: 100%; height: 75px">
                 Welcome {{ auth() -> user() -> email }}
@@ -29,7 +29,7 @@
                     <div class="col-md-4" style="text-align: center">
                         <div class="card">
                             <div class="card-header">
-                                Physical Activities
+                                Physical Activity
                             </div>
                             <div class="card-body">
                                 <div class="email-statis-wrap">
@@ -59,7 +59,7 @@
                     <div class="col-md-4" style="text-align: center">
                         <div class="card">
                             <div class="card-header">
-                                Nutritions
+                                Nutrition
                             </div>
                             <div class="card-body">
                                 <div class="email-statis-wrap">

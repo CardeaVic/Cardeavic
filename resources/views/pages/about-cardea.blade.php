@@ -19,7 +19,7 @@
         <p class="single-text-center text-center" style="font-weight: normal !important">Cardea has more to offer!</p>
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-9">
               <div id="carouselExampleCaptions" class="carousel slide z-index-2" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -28,7 +28,7 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="/images/carousel/image1.png" class="d-block w-100" alt="...">
+                      <img src="/images/carousel/image1.jpg" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block" style="background-color: rgba(77, 77, 77, 0.5)">
                         <h5>Dashboard</h5>
                         <p>The log book feature will enable a personalized dashboard for 
@@ -37,16 +37,16 @@
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="/images/carousel/image2.png" class="d-block w-100" alt="...">
+                      <img src="/images/carousel/image2.jpg" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block" style="background-color: rgba(77, 77, 77, 0.5)">
                         <h5>Log book</h5>
-                        <p>CARDEA provide a daily Log book feature for recording your 
-                          lifestyle habits.The log book primarily focuses on your eating habits, physical 
-                          activity and smoking status if any.</p>
+                        <p>Daily Log book feature for recording your lifestyle habits primarily 
+                          focuses on your eating habits, physical 
+                          activity and smoking status.</p>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="/images/carousel/image3.png" class="d-block w-100" alt="...">
+                      <img src="/images/carousel/image3.jpg" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block" style="background-color: rgba(77, 77, 77, 0.5)">
                         <h5>Personalized Report</h5>
                         <p>Logging your daily life style habits will help us to generate a 

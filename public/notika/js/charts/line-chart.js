@@ -15,7 +15,7 @@ for(record in records_list){
  "use strict";
 
 	 /*----------------------------------------*/
-	/*  1.  Basic Line Chart
+	/*  1.  Physical activity Line Chart
 	/*----------------------------------------*/
 	var ctx = document.getElementById("physical_activity_chart");
 	var basiclinechart = new Chart(ctx, {
@@ -88,7 +88,7 @@ for(record in records_list){
 	});
 
 	/*----------------------------------------*/
-	/*  2.  Line Chart Interpolation
+	/*  2.  Fruit and Vegetable Line Chart
 	/*----------------------------------------*/
 
 	var ctx = document.getElementById("fruit_vege_chart");
