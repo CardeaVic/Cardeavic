@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
- 
+
     /**
      * Show the application dashboard.
      *
@@ -25,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         // Get user id
         $user_id = auth()->user()->id;
         // Fetching records from db

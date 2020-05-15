@@ -2,45 +2,67 @@
 {{--Css Imports--}}
 @push('css')
     <link rel="stylesheet" href="{{ asset("css/dashboard.css?".uniqid()) }}">
+    <style>
+        .welcome-msg{
+            margin-top: 3%;
+            font-size: 16pt;
+            line-height: 1.5;
+            letter-spacing: 1;
+            text-transform: capitalize;
+            padding: 10px 10px 10px 10px;
+        }
+    </style>
 @endpush
 
 @section('content')
-    {{-- Main Container for Dashboard--}}
-    <div class="container" style="flex: 1 0 auto;">
-        {{-- Pie chart --}}
-        <div class="area-chart-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-left: auto; margin-right: auto;">
-                        <div class="area-chart-wp">
-                            <canvas height="140vh" width="180vw" id="piechart"></canvas>
-                        </div>
-                    </div>
-                </div>
+
+<div class="container">
+    <div class="row">
+            <div class="card justify-content-center welcome-msg rounded" style="width: 100%; height: 75px">
+                Welcome {{ auth() -> user() -> email }}
             </div>
-        </div>
-        {{-- Line charts --}}
-        <div class="line-chart-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="line-chart-wp chart-display-nn">
-                            {{-- Physical Activity Chart --}}
-                            <canvas height="140vh" width="180vw" id="physical_activity_chart"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="line-chart-wp sm-res-mg-t-30 chart-display-nn">
-                            {{-- Servings Chart --}}
-                            <canvas height="140vh" width="180vw" id="fruit_vege_chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="row" style="margin-top: 3%">
+        <p>This week's status</p>
 
     </div>
-    {{-- Main Container Ends   --}}
+</div>
+{{--    --}}{{-- Main Container for Dashboard--}}
+{{--    <div class="container" style="flex: 1 0 auto;">--}}
+{{--        --}}{{-- Pie chart --}}
+{{--        <div class="area-chart-area">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-left: auto; margin-right: auto;">--}}
+{{--                        <div class="area-chart-wp">--}}
+{{--                            <canvas height="140vh" width="180vw" id="piechart"></canvas>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        --}}{{-- Line charts --}}
+{{--        <div class="line-chart-area">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
+{{--                        <div class="line-chart-wp chart-display-nn">--}}
+{{--                            --}}{{-- Physical Activity Chart --}}
+{{--                            <canvas height="140vh" width="180vw" id="physical_activity_chart"></canvas>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">--}}
+{{--                        <div class="line-chart-wp sm-res-mg-t-30 chart-display-nn">--}}
+{{--                            --}}{{-- Servings Chart --}}
+{{--                            <canvas height="140vh" width="180vw" id="fruit_vege_chart"></canvas>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+{{--    </div>--}}
+{{--    --}}{{-- Main Container Ends   --}}
 @endsection
 {{--JS Import--}}
 @push('js')
