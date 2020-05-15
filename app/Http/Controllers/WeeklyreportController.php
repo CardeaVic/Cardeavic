@@ -35,7 +35,6 @@ class WeeklyreportController extends Controller
                 array_push($sundaysWeeks, ['weekStartDate' => $weekStartDate, 'weekEndDate' => $weekEndDate]);
             }
         }
-        dd($sundaysWeeks);
         return view('report.index', compact('sundaysWeeks'));
     }
 
