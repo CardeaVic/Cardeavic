@@ -87,7 +87,8 @@
 @endpush
 
 @section('content')
-    <div class="container">
+
+    <div class="container" style="flex: 1 0 auto;">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" style="margin-top: 2%">
@@ -100,7 +101,7 @@
                             <table width="100%">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Id</th>
+                                    <th scope="col">No.</th>
                                     <th scope="col">Start Date</th>
                                     <th scope="col">End Date</th>
                                     <th scope="col">View Report</th>

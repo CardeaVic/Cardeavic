@@ -53,7 +53,7 @@
 @endpush
 
 @section('content')
-    <div class="container" style="margin-top: 5%;flex: 1 0 auto;">
+    <div class="container" style="flex: 1 0 auto;">
         @if(count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>

@@ -90,7 +90,9 @@
     <div class="container" style="flex: 1 0 auto;" >
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <button class="btn btn-primary" style="background-color: #53b3a6; border: none" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>
+                <div class="row justify-content-end" style="margin-top: 16px">
+                <button class="btn btn-primary" style="background-color: #53b3a6; border: none; margin-right:16px" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>
+                </div>
                 <div class="card" style="margin-top: 2%">
                     <div class="card-header">
                         Daily Activities
@@ -101,8 +103,8 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Physical Activity(Minutes)</th>
-                                    <th scope="col">Fruit and Vegetable Servings</th>
+                                    <th scope="col">Physical Activity (in minutes)</th>
+                                    <th scope="col">Fruit and Vegetable (servings)</th>
                                     <th scope="col">Smoking</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
