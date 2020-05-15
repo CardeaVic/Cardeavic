@@ -87,7 +87,7 @@
 @endpush
 
 @section('content')
-    <div class="container" style="margin-top: 10%">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card" style="margin-top: 2%">
