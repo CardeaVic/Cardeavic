@@ -58,11 +58,11 @@
                 <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
                     <li class="{{ (Request::is('home') ? 'active' : '') }}"><a href="{{ route('home') }}"><i class="notika-icon notika-house"></i> Home</a>
                     </li>
-                    <li class="{{ (Request::is('daily-activities/create') ? 'active' : '') }}"><a href="{{ route('daily-activities.create') }}"><i class="notika-icon notika-house"></i> Add Activity</a>
+                    <li class="{{ (Request::is('daily-activities/create') ? 'active' : '') }}"><a href="{{ route('daily-activities.create') }}"><i class="notika-icon notika-form"></i> Add Activity</a>
                     </li>
-                    <li class="{{ (Request::is('daily-activities') ? 'active' : '') }}"><a href="{{ route('daily-activities.index') }}"><i class="notika-icon notika-house"></i> View Activities</a>
+                    <li class="{{ (Request::is('daily-activities') ? 'active' : '') }}"><a href="{{ route('daily-activities.index') }}"><i class="notika-icon notika-eye"></i> View Activities</a>
                     </li>
-                    <li class="{{ (Request::is('report/index') ? 'active' : '') }}"><a href="{{ route('report.index') }}"><i class="notika-icon notika-house"></i> Reports</a>
+                    <li class="{{ (Request::is('report/index') ? 'active' : '') }}"><a href="{{ route('report.index') }}"><i class="notika-icon notika-bar-chart"></i> Reports</a>
                     </li>
                 </ul>
             </div>

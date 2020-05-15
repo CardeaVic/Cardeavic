@@ -19,7 +19,7 @@
     <div class="container" style="flex: 1 0 auto;">
         <div class="row">
             <div class="card justify-content-center welcome-msg rounded" style="width: 100%; height: 75px">
-                Welcome {{ auth() -> user() -> email }}
+                Welcome {{ auth() -> user() -> email }}!
             </div>
         </div>
         <div class="row" style="margin-top: 3%">
@@ -27,11 +27,11 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4" style="text-align: center">
-                        <div class="card" style="height: 100%">
+                        <div class="card" style="height: 100%;">
                             <div class="card-header">
                                 Physical Activity
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="margin-top: 10%">
                                 <div class="email-statis-wrap">
                                     <div class="email-round-nock">
                                         <input type="text" class="knob" value="0"
@@ -61,7 +61,7 @@
                             <div class="card-header">
                                 Nutrition
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="margin-top: 10%">
                                 <div class="email-statis-wrap">
                                     <div class="email-round-nock">
                                         <input type="text" class="knob" value="0"
