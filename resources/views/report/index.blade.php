@@ -100,7 +100,7 @@
                             <table width="100%">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Id</th>
+                                    <th scope="col">No.</th>
                                     <th scope="col">Start Date</th>
                                     <th scope="col">End Date</th>
                                     <th scope="col">View Report</th>
