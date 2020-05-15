@@ -3,13 +3,13 @@
     <link rel="stylesheet" href="{{ asset("/css/cd.welcome.css?".uniqid()) }}">
 @endpush
 @section('content')
-<div class="container">
     {{--  Logo      --}}
-    <div class="row custom-logo">
-        <div class="col s12 m12 l12">
-            <img class="img-fluid" src="{{asset('/images/CardeaLogoSmall.png')}}">
+    <div class="w3-row custom-logo">
+        <div class="w3-col s12 m12 l12">
+            <img class="w3-image" src="{{asset('/images/CardeaLogoSmall.png')}}">
         </div>
     </div>
+<div class="container">
     <div class="row justify-content-center z-index-2" style="margin-top: 5%">
         <div class="col-md-8">
             <div class="card">
