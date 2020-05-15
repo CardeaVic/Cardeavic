@@ -19,7 +19,7 @@
         <p class="single-text-center text-center" style="font-weight: normal !important">Cardea has more to offer!</p>
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-9">
+            <div class="col-lg-8">
               <div id="carouselExampleCaptions" class="carousel slide z-index-2" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
