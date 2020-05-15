@@ -46,7 +46,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="col-md-1">
+                            <div class="col-md-1 align-self-center" style="padding-left:0;">
                                 <span>
                                     <a data-toggle="tooltip" data-placement="bottom" title="Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase and 1 Numeric character.">
                                         <i class="fas fa-info-circle p-1"></i>
