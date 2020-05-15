@@ -87,7 +87,7 @@
 @endpush
 
 @section('content')
-    <div class="container" style="margin-top: 10%;flex: 1 0 auto;" >
+    <div class="container" style="flex: 1 0 auto;" >
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <button class="btn btn-primary" style="background-color: #53b3a6; border: none" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>
@@ -101,8 +101,8 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Physical Activity(Minutes)</th>
-                                    <th scope="col">Fruit and Vegetable Servings</th>
+                                    <th scope="col">Physical Activity (in minutes)</th>
+                                    <th scope="col">Fruit and Vegetable (servings)</th>
                                     <th scope="col">Smoking</th>
                                     <th scope="col">Edit</th>
                                     <th scope="col">Delete</th>
