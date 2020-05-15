@@ -21,13 +21,13 @@ var myPieChart = new Chart(ctx, {
     },
     options: {
         responsive: true,
-        title:{
-            display:true,
-            text:'Smoking'
-        },
         tooltips: {
             mode: 'index',
             intersect: false,
+        },
+        legend: {
+            display: true,
+            position: 'bottom',
         },
         hover: {
             mode: 'nearest',

@@ -6,14 +6,14 @@ for(record in records_list){
 	var x = records_list[record];
 	var m = x.minutes;
 	var h = x.hours * 60;
-	date.push(x.date);
+	date.push(moment(x.date).format('D/M'));
 	minutes.push(m+h);
 	servings.push(x.servings*1);
 }
 
 (function ($) {
  "use strict";
- 
+
 	 /*----------------------------------------*/
 	/*  1.  Basic Line Chart
 	/*----------------------------------------*/
@@ -23,18 +23,11 @@ for(record in records_list){
 		data: {
 			labels: date,
 			datasets: [{
-				label: "Recommended level",
-				fill: false,
-                backgroundColor: '#00c292',
-				borderColor: '#00c292',
-				data: [20, 20, 20, 20, 20, 20, 20]
-            }, {
-                label: "My actual level",
+                label: "Your Daily Activity Minutes",
 				fill: false,
                 backgroundColor: '#fb9678',
 				borderColor: '#fb9678',
 				data: minutes
-				
 		}]
 		},
 		options: {
@@ -66,39 +59,57 @@ for(record in records_list){
 						labelString: 'Minutes'
 					}
 				}]
-			}
+			},
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 0,
+                    top: 0,
+                    bottom: 20
+                }
+            },
+            annotation: {
+                annotations: [{
+                    type: 'line',
+                    mode: 'horizontal',
+                    scaleID: 'y-axis-0',
+                    value: '30',
+                    borderColor: '#53e3a6',
+                    borderWidth: 3,
+                    label: {
+                        enabled: true,
+                        content: 'Expected Level',
+                        backgroundColor: 'red'
+                    }
+                }],
+                drawTime: "afterDraw" // (default)
+            },
 		}
 	});
-	
+
 	/*----------------------------------------*/
 	/*  2.  Line Chart Interpolation
 	/*----------------------------------------*/
-	
+
 	var ctx = document.getElementById("fruit_vege_chart");
 	var basiclinechart = new Chart(ctx, {
 		type: 'line',
 		data: {
 			labels: date,
 			datasets: [{
-				label: "Recommended servings",
-				fill: false,
-                backgroundColor: '#00c292',
-				borderColor: '#00c292',
-				data: [5, 5, 5, 5, 5, 5, 5]
-            }, {
-                label: "My actual servings",
+                label: "Your Daily Servings",
 				fill: false,
                 backgroundColor: '#fb9678',
 				borderColor: '#fb9678',
 				data: servings
-				
+
 		}]
 		},
 		options: {
 			responsive: true,
 			title:{
 				display:true,
-				text:'Fruit and Vegetable'
+				text:'Fruit and Vegetable Servings'
 			},
 			tooltips: {
 				mode: 'index',
@@ -118,13 +129,42 @@ for(record in records_list){
 				}],
 				yAxes: [{
 					display: true,
+                    ticks: {
+                        max: 10,
+                        min: 0,
+                        stepSize: 1
+                    },
 					scaleLabel: {
 						display: true,
 						labelString: 'Servings'
 					}
 				}]
-			}
+			},
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 0,
+                    top: 0,
+                    bottom: 20
+                }
+            },
+            annotation: {
+                annotations: [{
+                    type: 'line',
+                    mode: 'horizontal',
+                    scaleID: 'y-axis-0',
+                    value: '5',
+                    borderColor: '#53e3a6',
+                    borderWidth: 3,
+                    label: {
+                        enabled: true,
+                        content: 'Expected Level',
+                        backgroundColor: 'red'
+                    }
+                }],
+                drawTime: "afterDraw" // (default)
+            },
 		}
 	});
-	
-})(jQuery); 
+
+})(jQuery);
