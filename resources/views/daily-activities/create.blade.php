@@ -75,7 +75,7 @@
                             <div class="form-group row">
                                 <label for="date" class="col-md-4 col-form-label text-md-right">Date</label>
                                 <div class="datepicker date input-group p-0 shadow-sm col-md-6">
-                                    <input id="datepicker" name="date" type="text" placeholder="Choose Activity Date" class="form-control  @error('email') is-invalid @enderror" id="activityDate">
+                                    <input autocomplete="off" id="datepicker" name="date" type="text" placeholder="Choose Activity Date" class="form-control  @error('email') is-invalid @enderror" id="activityDate">
                                     <div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
                                 </div>
                             </div>
@@ -182,11 +182,12 @@
                 stepMonths: 0,
                 minViewMode: 0,
                 maxViewMode: 0,
-                setDate: new Date(),
                 calendarWeeks: true,
                 autoclose: true,
             });
         });
+
+        $('#datepicker').val(todayDate);
 
     </script>
 @endpush
