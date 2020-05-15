@@ -66,5 +66,9 @@ class WeeklyreportController extends Controller
         return $pdf -> stream();
     }
 
+    public function redirectViewPage(){
+        return redirect(route('report.index'));
+    }
+
 
 }

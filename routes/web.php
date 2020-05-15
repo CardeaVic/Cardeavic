@@ -56,4 +56,5 @@ Route::resource('daily-activities', 'DailyActivitiesController');
 Route::prefix('report')->group(function () {
     Route::get('index', ['as' => 'report.index', 'uses' => 'WeeklyreportController@index']);
     Route::post('view', ['as' => 'report.view', 'uses' => 'WeeklyreportController@viewReport']);
+    Route::get('view', ['as' => 'report.view', 'uses' => 'WeeklyreportController@redirectViewPage']);
 });
