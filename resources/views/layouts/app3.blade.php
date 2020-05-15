@@ -27,6 +27,7 @@
     <meta name="theme-color" content="#ffffff">
     @stack('meta')
     <!--- ============================================ -->
+    <link rel="stylesheet" href="{{ asset('notika/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Bootstrap CSS
 		============================================ -->
@@ -70,6 +71,14 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="{{ asset('notika/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <style>
+        @media (min-width: 320px) and (max-width: 450px) {
+            .header-logo {
+                height: 25%;
+                width: 25%;
+            }
+        }
+    </style>
     @stack('css')
 </head>
 <body class="d-flex flex-column" style="height: 100%;">
