@@ -24,6 +24,7 @@ class WeeklyreportController extends Controller
     public function index(){
         $userId = auth() -> user() -> id;
         $startDate = DailyActivity::where('user_id', $userId) -> first() -> date -> toDateString();
+        dd($startDate);
         $endDate = Carbon::today() -> toDateString();
         $dates = CarbonPeriod::create($startDate, $endDate);
         $sundaysWeeks = array();
