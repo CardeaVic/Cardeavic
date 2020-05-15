@@ -21,6 +21,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("/css/cd.common.css?".uniqid()) }}">
+    <link rel="stylesheet" href="{{ asset("/css/w3.css?".uniqid()) }}">
     <style type="text/css">
         .field-icon {
             float: right;
