@@ -49,7 +49,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logbook', function () {
     return view('pages.logbook');
 });
-
+Route::get('daily-activities/export', ['as' => 'daily-activities.export', 'uses' => 'DailyActivitiesController@export']);
 Route::resource('daily-activities', 'DailyActivitiesController');
 
 //Report routes

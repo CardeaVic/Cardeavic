@@ -92,6 +92,7 @@
             <div class="col-md-12">
                 <div class="row justify-content-end" style="margin-top: 16px">
                 <button class="btn btn-primary" style="background-color: #53b3a6; border: none; margin-right:16px" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>
+                    <button class="btn btn-primary" style="background-color: #53b3a6; border: none; margin-right:16px" onclick="window.location.href = '{{ route('daily-activities.export') }}'">Export</button>
                 </div>
                 <div class="card" style="margin-top: 2%">
                     <div class="card-header">

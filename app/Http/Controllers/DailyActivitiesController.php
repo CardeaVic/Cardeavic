@@ -186,4 +186,23 @@ class DailyActivitiesController extends Controller
         $daily_activity->delete();
         return redirect('daily-activities')->with('success', 'Activity removed');
     }
+
+    public function export(){
+        header("Content-type: text/csv");
+        header("Content-Disposition: attachment; filename=file.csv");
+        header("Pragma: no-cache");
+        header("Expires: 0");
+
+        $userId = auth() -> user() -> id;
+        $dailyActivities = DailyActivity::where('user_id', $userId) -> orderBy('date', 'asc') -> get();
+        $columns = array('Date', 'Hour', 'Minute', 'Servings', 'Smoked');
+
+        $file = fopen('php://output', 'w');
+        fputcsv($file, $columns);
+
+        foreach($dailyActivities as $dailyActivity) {
+            fputcsv($file, array($dailyActivity->date,$dailyActivity->hours,$dailyActivity->minutes,$dailyActivity->servings,$dailyActivity->smoke));
+        }
+        exit();
+    }
 }
