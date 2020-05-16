@@ -1,10 +1,10 @@
 body {
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
 
 }
 
 h1, h2, p, #text, .custom-text-color {
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
     color: #50a3a2 !important;
 }
 /* Disclaimer font awesome icon color change to orange*/
