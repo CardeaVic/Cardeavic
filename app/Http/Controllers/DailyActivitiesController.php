@@ -195,7 +195,7 @@ class DailyActivitiesController extends Controller
 
         $userId = auth() -> user() -> id;
         $dailyActivities = DailyActivity::where('user_id', $userId) -> orderBy('date', 'asc') -> get();
-        $columns = array('Date', 'Hour', 'Minute', 'Servings', 'Smoked');
+        $columns = array('Date', 'Activity Hour', 'Activity Minute', 'Food Servings', 'Smoked');
 
         $file = fopen('php://output', 'w');
         fputcsv($file, $columns);
