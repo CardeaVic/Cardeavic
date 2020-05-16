@@ -204,7 +204,7 @@
                             @if($daysSmoked == 0)
                                 Well done you did not smoke last week.
                             @else
-                                you smoked {{ $daysSmoked }} out of 7 Days.
+                                you smoked <strong>{{ $daysSmoked }}</strong> out of <strong>7 Days</strong>.
                             @endif
                         </td>
                     </tr>
