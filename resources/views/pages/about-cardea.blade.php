@@ -43,7 +43,7 @@
                     <div class="carousel-item">
                       <img src="/images/carousel/image3.jpg" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block" style="background-color: rgba(77, 77, 77, 0.5)">
-                        <p>Generate personalized <strong>REPORTS</strong>> about Cardiovascular Health.</p>
+                        <p>Generate personalized <strong>REPORTS</strong> about Cardiovascular Health.</p>
                       </div>
                     </div>
                   </div>
