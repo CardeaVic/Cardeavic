@@ -29,7 +29,7 @@ class HomeController extends Controller
 
         // Get user id
         $user_id = auth()->user()->id;
-        // Fetching records from db
+        // Fetching all records from db
         $daily_activities = DailyActivity::where('user_id', $user_id)->orderBy('date', 'asc')->get();
 
         // Weekly Status
