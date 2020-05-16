@@ -16,7 +16,7 @@ var myPieChart = new Chart(ctx, {
         datasets: [{
             backgroundColor: ['#00c292', '#F44336'],
             borderColor: 'white',
-            data: [notSmoked, smoked]
+            data: [daily_activities.notSmoked, daily_activities.smoked]
         }],
     },
     options: {
