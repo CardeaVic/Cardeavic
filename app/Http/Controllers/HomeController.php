@@ -29,12 +29,8 @@ class HomeController extends Controller
 
         // Get user id
         $user_id = auth()->user()->id;
-        // Fetching records from db
+        // Fetching all records from db
         $daily_activities = DailyActivity::where('user_id', $user_id)->orderBy('date', 'asc')->get();
-        // Passing data to javascript
-        JavaScript::put([
-            'records' => $daily_activities,
-        ]);
 
         // Weekly Status
         $today = Carbon::today();
@@ -44,6 +40,7 @@ class HomeController extends Controller
         $weeklyTotalMinutes = 0;
         $numberOfServings = 0;
         $daysSmoked = 0;
+        $daysNotSmoked = 0;
         foreach ($dailyActivities as $dailyActivity) {
             $totalMinutes = ($dailyActivity -> hours)*60 + ($dailyActivity -> minutes);
             $weeklyTotalMinutes = $weeklyTotalMinutes + $totalMinutes;
@@ -53,8 +50,17 @@ class HomeController extends Controller
             }
             if($dailyActivity -> smoke != 0){
                 $daysSmoked = $daysSmoked + 1;
+            }else{
+                $daysNotSmoked = $daysNotSmoked +1;
             }
         }
+
+        // Passing data to javascript
+        JavaScript::put([
+            'records' => $daily_activities,
+            'smoked' => $daysSmoked,
+            'notSmoked' => $daysNotSmoked
+        ]);
 
         $physicalActivityPercentage = round(($weeklyTotalMinutes/150) * 100, 0);
         $nutritionPercentage = round(($numberOfServings/35) * 100, 0);

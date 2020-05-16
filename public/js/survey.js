@@ -237,7 +237,7 @@ var json = {
     ],
     "questionErrorLocation": "bottom",
     "showProgressBar": "top",
-    "progressBarType": "questions",
+    "progressBarType": "pages",
     "firstPageIsStarted": true,
     "questionsOnPageMode": "questionPerPage",
     "requiredText": ""
@@ -252,6 +252,6 @@ survey
         document.surveyForm.submit();
     });
 
-Survey.surveyStrings.questionsProgressText = "{0}/11 questions"
+Survey.surveyStrings.progressText = "Question {0} of {1}";
 
 $("#surveyElement").Survey({model: survey, css: myCss});

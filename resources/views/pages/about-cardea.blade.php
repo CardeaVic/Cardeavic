@@ -28,29 +28,22 @@
                   </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="/images/carousel/image1.jpg" class="d-block w-100" alt="...">
+                      <img src="/images/carousel/carousel1.jpg" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block" style="background-color: rgba(77, 77, 77, 0.5)">
-                        <h5>Dashboard</h5>
-                        <p>The log book feature will enable a personalized dashboard for 
-                          tracking the trends in your daily habits.
+                        <p>Personalized <strong>DASHBOARD</strong> for tracking the trends in daily habits.
                         </p>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="/images/carousel/image2.jpg" class="d-block w-100" alt="...">
+                      <img src="/images/carousel/carousel2.jpg" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block" style="background-color: rgba(77, 77, 77, 0.5)">
-                        <h5>Log book</h5>
-                        <p>Daily Log book feature for recording your lifestyle habits primarily 
-                          focuses on your eating habits, physical 
-                          activity and smoking status.</p>
+                        <p><strong>LOG BOOK</strong> records lifestyle habits primarily focuses on eating habits, physical activity and smoking status.</p>
                       </div>
                     </div>
                     <div class="carousel-item">
-                      <img src="/images/carousel/image3.jpg" class="d-block w-100" alt="...">
+                      <img src="/images/carousel/carousel3.jpg" class="d-block w-100" alt="...">
                       <div class="carousel-caption d-none d-md-block" style="background-color: rgba(77, 77, 77, 0.5)">
-                        <h5>Personalized Report</h5>
-                        <p>Logging your daily life style habits will help us to generate a 
-                          personalized report about your Cardiovascular Health.</p>
+                        <p>Generate personalized <strong>REPORTS</strong> about Cardiovascular Health.</p>
                       </div>
                     </div>
                   </div>
