@@ -110,7 +110,7 @@
                                 <tbody>
                                 @foreach($sundaysWeeks as $sundaysWeek)
                                     <tr>
-                                        <td data-label="Id">{{ $i  }}</td>
+                                        <td data-label="No.">{{ $i  }}</td>
                                         <td data-label="Start Date">{{ $sundaysWeek['weekStartDate'] -> format('d/m/Y') }}</td>
                                         <td data-label="End Date">{{ $sundaysWeek['weekEndDate'] -> format('d/m/Y') }}</td>
                                         <td data-label="View">
