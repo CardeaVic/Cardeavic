@@ -37,14 +37,24 @@ Route::get('/about-cardea', function () {
     return view('pages.about-cardea');
 })->name('about-cardea');
 
-//Test Route
-Route::get('/test', function () {
-    return view('pages.test');
-});
-
 //Authentication Routes
 Auth::routes();
 
 
 // After login taking to dashboard
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Logbook Route
+Route::get('/logbook', function () {
+    return view('pages.logbook');
+});
+Route::get('daily-activities/export', ['as' => 'daily-activities.export', 'uses' => 'DailyActivitiesController@export']);
+Route::resource('daily-activities', 'DailyActivitiesController');
+
+//Report routes
+Route::prefix('report')->group(function () {
+    Route::get('index', ['as' => 'report.index', 'uses' => 'WeeklyreportController@index']);
+    Route::post('view', ['as' => 'report.view', 'uses' => 'WeeklyreportController@viewReport']);
+    Route::get('view', ['as' => 'report.view', 'uses' => 'WeeklyreportController@redirectViewPage']);
+});

@@ -1,84 +1,110 @@
-@extends('layouts.app')
+@extends('layouts.app3')
 {{--Css Imports--}}
 @push('css')
-    <link rel="stylesheet" href="{{ asset("/css/dashboard.css?".uniqid()) }}">
-    <!-- Bootstrap core CSS -->
-    <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset("css/dashboard.css?".uniqid()) }}">
+    <style>
+        .welcome-msg {
+            margin-top: 3%;
+            font-size: 16pt;
+            line-height: 1.5;
+            letter-spacing: 1;
+            text-transform: capitalize;
+            padding: 10px 10px 10px 10px;
+        }
+    </style>
 @endpush
 
-
-
 @section('content')
-    {{--    Including the Navbar --}}
-    @include('include.navbar')
-    {{-- Main Container for Dashboard--}}
-    <div class="w3-container wrapper">
-        <div class="w3-row-padding w3-content">
-            <div class="w3-col l12 s12 m12">
-                {{-- Dashboard Chart--}}
-                <h1 class="h2 w3-center">Dashboard</h1>
-                <canvas class="my-4 w-100" id="myChart" width="400" height="200"></canvas>
-                {{-- Dashboard Chart Ends--}}
-                {{-- Records History                --}}
-                <h2 class="h2 w3-center">Your records</h2>
-                <table class="w3-table-all w3-card-4">
-                    <thead>
-                    <tr class="custom-table-header">
-                        <th>#</th>
-                        <th>Date</th>
-                        <th>Activity</th>
-                        <th>Fruit intake</th>
-                        <th>Vegetable intake</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>02-02-2020</td>
-                        <td>Yes</td>
-                        <td>No</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>02-03-2020</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>02-04-2020</td>
-                        <td>No</td>
-                        <td>Yes</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>02-05-2020</td>
-                        <td>No</td>
-                        <td>Yes</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>02-06-2020</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
-                        <td>No</td>
-                    </tr>
-                    </tbody>
-                </table>
-                {{-- Records History Ends--}}
+
+    <div class="container" style="flex: 1 0 auto;">
+        <div class="row">
+            <div class="card justify-content-center welcome-msg rounded" style="width: 100%; height: 75px">
+                Welcome {{ auth() -> user() -> email }}!
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3%">
+            <p>This week's status</p>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4" style="text-align: center">
+                        <div class="card" style="height: 100%;">
+                            <div class="card-header">
+                                Physical Activity
+                            </div>
+                            <div class="card-body" style="margin-top: 10%">
+                                <div class="email-statis-wrap">
+                                    <div class="email-round-nock">
+                                        <input type="text" class="knob" value="0"
+                                               data-rel="{{ $data -> physicalActivityPercentage }}" data-linecap="round"
+                                               data-width="130" data-bgcolor="#E4E4E4" data-fgcolor="#00c292"
+                                               data-thickness=".10" data-readonly="true">
+                                    </div>
+                                    <div class="email-ctn-nock">
+                                        <p>Activity Level</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="text-align: center">
+                        <div class="card">
+                            <div class="card-header">
+                                Smoking
+                            </div>
+                            <div class="card-body">
+                                <canvas height="140vh" width="180vw" id="piechart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="text-align: center;">
+                        <div class="card" style=" height: 100%">
+                            <div class="card-header">
+                                Nutrition
+                            </div>
+                            <div class="card-body" style="margin-top: 10%">
+                                <div class="email-statis-wrap">
+                                    <div class="email-round-nock">
+                                        <input type="text" class="knob" value="0"
+                                               data-rel="{{ $data -> nutritionPercentage }}" data-linecap="round"
+                                               data-width="130" data-bgcolor="#E4E4E4" data-fgcolor="#00c292"
+                                               data-thickness=".10" data-readonly="true">
+                                    </div>
+                                    <div class="email-ctn-nock">
+                                        <p>Consumption Level</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3%">
+            <p>All Time Trends</p>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <canvas height="140vh" width="180vw" id="physical_activity_chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <canvas height="140vh" width="180vw" id="fruit_vege_chart"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {{-- Main Container Ends   --}}
+
+
 @endsection
 {{--JS Import--}}
 @push('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-    <script src="{{ asset('/js/dashboard.js?'.uniqid()) }}"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="notika/js/charts/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js"></script>
+    <script src="notika/js/charts/pie-chart.js"></script>
+    <script src="notika/js/charts/line-chart.js"></script>
 @endpush
