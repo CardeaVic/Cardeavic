@@ -19,7 +19,7 @@
     <div class="container" style="flex: 1 0 auto;">
         <div class="row">
             {{-- Welcome message --}}
-            <div class="card justify-content-center welcome-msg rounded" style="width: 100%; height: 75px">
+            <div class="card justify-content-center welcome-msg rounded text-center" style="width: 100%; height: 75px">
                 Welcome {{ auth() -> user() -> email }}!
             </div>
         </div>
