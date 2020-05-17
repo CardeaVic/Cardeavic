@@ -60,7 +60,7 @@ class DailyActivitiesController extends Controller
             'fruit_vege' => 'nullable|integer|between:0,20',
             'smoking' => 'required',
             'date' => 'required|unique:daily_activities,date,NULL,id,user_id,'. auth() -> user() -> id,
-        ]);
+        ], ['date.unique' => 'Data entry for this date already exists!']);
 
         if ($validator->fails()){
             return redirect('daily-activities/create')->withErrors($validator)->withInput();
