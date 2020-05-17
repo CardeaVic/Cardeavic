@@ -91,6 +91,9 @@
     <div class="container" style="flex: 1 0 auto;">
         <div class="row justify-content-center">
             <div class="col-md-12">
+                <div class="card justify-content-center text-center rounded" style="width: 100%; height: 75px">
+                    Please note: Reports are generated on a weekly basis on Sunday.
+                </div>
                 <div class="card" style="margin-top: 2%">
                     <div class="card-header">
                         Weekly Reports

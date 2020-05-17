@@ -15,8 +15,8 @@
         </div>
         {{-- Custom Logo Ends       --}}
         {{-- About Cardea Text Starts       --}}
-
         <p class="single-text-center text-center" style="font-weight: normal !important">Cardea has more to offer!</p>
+        {{-- Carousel container starts --}}
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -26,6 +26,7 @@
                     <li data-target="#carouselCaptions" data-slide-to="1"></li>
                     <li data-target="#carouselCaptions" data-slide-to="2"></li>
                   </ol>
+                  {{-- Carousel images section starts --}}
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <img src="/images/carousel/carousel1.png" class="d-block w-100" alt="...">
@@ -47,6 +48,9 @@
                       </div>
                     </div>
                   </div>
+                  {{-- Carousel images section ends--}}
+
+                  {{-- Carousel navigation buttons --}}
                   <a class="carousel-control-prev" href="#carouselCaptions" role="button" data-slide="prev" style="background-image: linear-gradient(to right, rgba(77,77,77,1), rgba(77,77,77,0));">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -59,6 +63,7 @@
           </div>
         </div>
       </div>
+      {{-- Carousel container ends --}}
         <div class="w3-row verticle-align-center w3-center z-index-2" style="margin-top: 32px">
             <div class="w3-col l12 s12 m12 w3-center">
                 <button type="button" class="w3-round custom-button-login" onclick="window.location.href = 'login'">

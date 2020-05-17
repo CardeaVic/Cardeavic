@@ -57,6 +57,7 @@ use Carbon\Carbon;
 @section('content')
     {{-- Main Container for edit --}}
     <div class="container" style="flex: 1 0 auto;" >
+        {{-- Error messages --}}
         @if(count($errors) > 0)
             <div class="alert alert-danger">    
                 <ul>
@@ -66,15 +67,18 @@ use Carbon\Carbon;
                 </ul>
             </div>
         @endif
+        {{-- Main container for edit activity --}}
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-header">
-                        Add Activity
+                        Edit Activity
                     </div>
+                    {{-- Edit activity body --}}
                     <div class="card-body">
                         <form action="{{ route('daily-activities.update', $daily_activity->id) }}" method="POST">
                             @csrf
+                            {{-- Date picker --}}
                             <div class="form-group row">
                                 <label for="date" class="col-md-4 col-form-label text-md-right">Date</label>
                                 <div class="datepicker date input-group p-0 shadow-sm col-md-6">
@@ -82,7 +86,7 @@ use Carbon\Carbon;
                                     <div class="input-group-append"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></div>
                                 </div>
                             </div>
-
+                            {{-- Physical activity --}}
                             <div class="form-group row">
                                 <label for="physical_activity" class="col-md-4 col-form-label text-md-right">Physical Activity</label>
                                 <div class="col-md-6 align-middle" style="margin-top: 1.5%">
@@ -107,7 +111,7 @@ use Carbon\Carbon;
                                     @endif
                                 </div>
                             </div>
-
+                            {{-- Hours and minutes --}}
                             @if($daily_activity->physical_activity == '1')
                                 <div class="form-group row" id="physical_hidden">
                                     <label for="physical_hours" class="col-md-4 col-form-label text-md-right">Hours</label>
@@ -133,7 +137,7 @@ use Carbon\Carbon;
                                     </div>
                                 </div>
                             @endif
-
+                            {{-- Fruits and vegetables --}}
                             <div class="form-group row">
                                 <label for="physical_activity" class="col-md-4 col-form-label text-md-right">Fruits and Vegetable</label>
                                 <div class="col-md-6 align-middle" style="margin-top: 1.5%">
@@ -158,6 +162,7 @@ use Carbon\Carbon;
                                     @endif
                                 </div>
                             </div>
+                            {{-- Servings --}}
                             @if($daily_activity->fruit_vege == '1')
                                 <div class="form-group row" id="servings_hidden">
                                     <label for="fruit_vege" class="col-md-4 col-form-label text-md-right">How Many Servings?</label>
@@ -173,11 +178,11 @@ use Carbon\Carbon;
                                     </div>
                                 </div>
                             @endif
-                            
+                            {{-- Smoking --}}
                             <div class="form-group row">
                                 <label for="physical_activity" class="col-md-4 col-form-label text-md-right">Did you smoke?</label>
                                 <div class="col-md-6 align-middle" style="margin-top: 1.5%">
-                                    @if($daily_activity->fruits_veges == '1')
+                                    @if($daily_activity->smoke == '1')
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" id="inlineradioyes" value="1" name="smoking" checked>
                                             <label class="form-check-label" for="inlineradioyes">Yes</label>
@@ -198,7 +203,7 @@ use Carbon\Carbon;
                                     @endif
                                 </div>
                             </div>
-                        
+                            {{-- Submit --}}
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary" style="background-color: #53b3a6; border: none">
@@ -213,6 +218,7 @@ use Carbon\Carbon;
                 </div>
             </div>
         </div>
+        {{-- Main edit form container ends --}}
     </div>
     {{-- Main Container ends --}}
 @endsection
