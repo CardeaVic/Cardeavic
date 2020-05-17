@@ -13,8 +13,8 @@ Thank you for considering contributing to the Cardea!.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Cardea, please send an e-mail to Subodh Sharma via [sd.n.vats@gmail.com](mailto:sd.n.vats@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Cardea Application is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
