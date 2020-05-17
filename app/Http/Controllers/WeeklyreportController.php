@@ -64,7 +64,6 @@ class WeeklyreportController extends Controller
                 $daysSmoked = $daysSmoked + 1;
             }
         }
-
         $pdf = PDF::loadView('report.pdf.index', compact('user', 'startDate', 'endDate', 'numberOfServings', 'weeklyTotalMinutes', 'daysSmoked'));
         $pdf->setOptions(['dpi' => 150]);
         $pdf->setPaper('a4', 'portriat');

@@ -227,7 +227,7 @@
             <div class="row" style="height: 20%">
                 <img class="focus-page-image" src="{{ public_path('images/report/focus_page.png') }}">
             </div>
-           @if($numberOfServings <= 35 or $$weeklyTotalMinutes <= 150 or $daysSmoked != 0)
+           @if($numberOfServings <= 35 or $weeklyTotalMinutes <= 150 or $daysSmoked != 0)
                 @if($numberOfServings <= 35 or $$weeklyTotalMinutes <= 150 or $daysSmoked != 0)
                     <div class="row">
                         <div class="col-md-12" style="margin-top: 3%;">
@@ -297,7 +297,7 @@
                @else
                 <div class="row">
                     <div class="col-md-12" style="margin-top: 3%;">
-                        <p class="sub-heading">
+                        <p class="sub-heading" style="text-align: center">
                             Congratulation!! You have meet all the goals of previous week. Keep up the good work.
                         </p>
                     </div>
