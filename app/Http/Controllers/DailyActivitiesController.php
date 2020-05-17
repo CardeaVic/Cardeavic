@@ -50,6 +50,7 @@ class DailyActivitiesController extends Controller
      */
     public function store(Request $request)
     {
+        $request['date'] = Carbon::createFromFormat('d/m/Y', $request['date']) -> toDateString();
         // Validate the input
         $validator = Validator::make($request->all(),[
             'physical_activity' => 'required',
@@ -58,7 +59,7 @@ class DailyActivitiesController extends Controller
             'fruits_veges' => 'required',
             'fruit_vege' => 'nullable|integer|between:0,20',
             'smoking' => 'required',
-            'date' => 'required|unique:daily_activities,date,NULL,id,user_id,'.\Auth::id()
+            'date' => 'required|unique:daily_activities,date,NULL,id,user_id,'. auth() -> user() -> id,
         ]);
 
         if ($validator->fails()){
