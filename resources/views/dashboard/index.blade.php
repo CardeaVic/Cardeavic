@@ -18,15 +18,18 @@
 
     <div class="container" style="flex: 1 0 auto;">
         <div class="row">
-            <div class="card justify-content-center welcome-msg rounded" style="width: 100%; height: 75px">
+            {{-- Welcome message --}}
+            <div class="card justify-content-center welcome-msg rounded text-center" style="width: 100%; height: 75px">
                 Welcome {{ auth() -> user() -> email }}!
             </div>
         </div>
+        {{-- This week's status section --}}
         <div class="row" style="margin-top: 3%">
             <p>This week's status</p>
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4" style="text-align: center">
+                        {{-- Activity level chart --}}
                         <div class="card" style="height: 100%;">
                             <div class="card-header">
                                 Physical Activity
@@ -47,6 +50,7 @@
                         </div>
                     </div>
                     <div class="col-md-4" style="text-align: center">
+                        {{-- Smoking chart --}}
                         <div class="card">
                             <div class="card-header">
                                 Smoking
@@ -57,6 +61,7 @@
                         </div>
                     </div>
                     <div class="col-md-4" style="text-align: center;">
+                        {{-- Nutrition chart --}}
                         <div class="card" style=" height: 100%">
                             <div class="card-header">
                                 Nutrition
@@ -79,15 +84,18 @@
                 </div>
             </div>
         </div>
+        {{-- All time trend section --}}
         <div class="row" style="margin-top: 3%">
             <p>All Time Trends</p>
             <div class="col-md-12">
                 <div class="row">
+                    {{-- Physical activity chart --}}
                     <div class="col-md-6">
                         <div class="card">
                             <canvas height="140vh" width="180vw" id="physical_activity_chart"></canvas>
                         </div>
                     </div>
+                    {{-- Fruit and vegetable chart --}}
                     <div class="col-md-6">
                         <div class="card">
                             <canvas height="140vh" width="180vw" id="fruit_vege_chart"></canvas>

@@ -227,72 +227,82 @@
             <div class="row" style="height: 20%">
                 <img class="focus-page-image" src="{{ public_path('images/report/focus_page.png') }}">
             </div>
-            @if($numberOfServings <= 35 or $$weeklyTotalMinutes <= 150 or $daysSmoked != 0)
-                <div class="row">
-                    <div class="col-md-12" style="margin-top: 3%;">
-                        <p class="sub-heading">
-                            Goals you missed previous week
-                        </p>
+           @if($numberOfServings <= 35 or $weeklyTotalMinutes <= 150 or $daysSmoked != 0)
+                @if($numberOfServings <= 35 or $$weeklyTotalMinutes <= 150 or $daysSmoked != 0)
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top: 3%;">
+                            <p class="sub-heading">
+                                Goals you missed previous week
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="row" style="margin-left: 5%;">
-                    <ul>
-                        @if($numberOfServings < 35)
-                            <li class="missed-goals">Not consumed enough servings of fruits and vegetables, minimum
-                                required 35 servings.
-                            </li>
-                        @endif
-                        @if($weeklyTotalMinutes < 150)
-                            <li class="missed-goals">You missed doing atleast 150 Minutes of physical activity.</li>
-                        @endif
-                        @if($daysSmoked > 0)
-                            <li class="missed-goals">You smoked, Try minimising or quiting</li>
-                        @endif
-                    </ul>
-                </div>
-            @endif
+                    <div class="row" style="margin-left: 5%;">
+                        <ul>
+                            @if($numberOfServings < 35)
+                                <li class="missed-goals">Not consumed enough servings of fruits and vegetables, minimum
+                                    required 35 servings.
+                                </li>
+                            @endif
+                            @if($weeklyTotalMinutes < 150)
+                                <li class="missed-goals">You missed doing atleast 150 Minutes of physical activity.</li>
+                            @endif
+                            @if($daysSmoked > 0)
+                                <li class="missed-goals">You smoked, Try minimising or quiting</li>
+                            @endif
+                        </ul>
+                    </div>
+                @endif
 
-            @if($numberOfServings <= 35 or $$weeklyTotalMinutes <= 150 or $daysSmoked != 0)
-                <div class="row">
-                    <div class="col-md-12" style="margin-top: 3%;">
-                        <p class="sub-heading">
-                            Tips to achieve weekly goals
-                        </p>
+                @if($numberOfServings <= 35 or $$weeklyTotalMinutes <= 150 or $daysSmoked != 0)
+                    <div class="row">
+                        <div class="col-md-12" style="margin-top: 3%;">
+                            <p class="sub-heading">
+                                Tips to achieve weekly goals
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="row" style="margin-left: 5%;">
-                    <ul>
-                        @if($numberOfServings < 35)
-                            <p class="sub-sub-heading">Nutrition</p>
-                            <li class="missed-goals"> Read about <a href="https://www.verywellfit.com/calorie-counts-and-nutrition-facts-overview-4581869calorie count and nutrition facts">calorie count and nutrition facts</a></li>
-                            <li class="missed-goals">Collection of <a href="https://www.bbcgoodfood.com/recipes/collection/fruit-salad"> Fruit Salad Receipe</a></li>
-                            <li class="missed-goals">Making <a href="https://www.heartfoundation.org.au/Heart-health-education/Making-healthier-meals-at-home">Healthier Meals at home</a></li>
-                            <li class="missed-goals">Make <a href="https://www.ambitiouskitchen.com/healthy-veggie-packed-dinners/">Veggie Pack dinners at home</a></li>
-                        @endif
-                        @if($weeklyTotalMinutes < 150)
-                            <p class="sub-sub-heading">Physical Activity</p>
-                            <li class="missed-goals">Check out <a href="https://www.fatherly.com/health-science/easy-workout-quick-workout/">some living room exercises</a></li>
+                    <div class="row" style="margin-left: 5%;">
+                        <ul>
+                            @if($numberOfServings < 35)
+                                <p class="sub-sub-heading">Nutrition</p>
+                                <li class="missed-goals"> Read about <a href="https://www.verywellfit.com/calorie-counts-and-nutrition-facts-overview-4581869calorie count and nutrition facts">calorie count and nutrition facts</a></li>
+                                <li class="missed-goals">Collection of <a href="https://www.bbcgoodfood.com/recipes/collection/fruit-salad"> Fruit Salad Receipe</a></li>
+                                <li class="missed-goals">Making <a href="https://www.heartfoundation.org.au/Heart-health-education/Making-healthier-meals-at-home">Healthier Meals at home</a></li>
+                                <li class="missed-goals">Make <a href="https://www.ambitiouskitchen.com/healthy-veggie-packed-dinners/">Veggie Pack dinners at home</a></li>
+                            @endif
+                            @if($weeklyTotalMinutes < 150)
+                                <p class="sub-sub-heading">Physical Activity</p>
+                                <li class="missed-goals">Check out <a href="https://www.fatherly.com/health-science/easy-workout-quick-workout/">some living room exercises</a></li>
                                 <li class="missed-goals">How much <a href="https://www.heartfoundation.org.au/heart-health-education/physical-activity-and-exercise">physical activity do you need?</a></li>
                                 <li class="missed-goals">Sitting less <a href="https://www.heartfoundation.org.au/getmedia/88c39659-675e-44b2-9da8-b9b28b5f0c83/PA-Sitting-Less-Adults.pdf">guidelines for adults</a></li>
-                        @endif
-                        @if($daysSmoked > 0)
-                            <p class="sub-sub-heading">Quit Smoking</p>
-                            <li class="missed-goals">If you have not quit smoking yet, use <a href="https://www.heartfoundation.org.au/heart-health-education/action-plans/quit-smoking-action-plan">Quit Smoking Action Plan</a> Now</li>
-                            <li class="missed-goals">Smoking Increases risk of:
-                            <ul class="missed-goals">
-                                <li>Heart attack – 2x higher
-                                </li>
-                                <li>Stroke – 3x higher
-                                </li>
-                                <li>Angina – 20x higher
-                                </li>
-                                <li>Peripheral Arterial Disease – 5x higher
-                                </li>
-                            </ul></li>
-                        @endif
-                    </ul>
+                            @endif
+                            @if($daysSmoked > 0)
+                                <p class="sub-sub-heading">Quit Smoking</p>
+                                <li class="missed-goals">If you have not quit smoking yet, use <a href="https://www.heartfoundation.org.au/heart-health-education/action-plans/quit-smoking-action-plan">Quit Smoking Action Plan</a> Now</li>
+                                <li class="missed-goals">Smoking Increases risk of:
+                                    <ul class="missed-goals">
+                                        <li>Heart attack – 2x higher
+                                        </li>
+                                        <li>Stroke – 3x higher
+                                        </li>
+                                        <li>Angina – 20x higher
+                                        </li>
+                                        <li>Peripheral Arterial Disease – 5x higher
+                                        </li>
+                                    </ul></li>
+                            @endif
+                        </ul>
+                    </div>
+                @endif
+               @else
+                <div class="row">
+                    <div class="col-md-12" style="margin-top: 3%;">
+                        <p class="sub-heading" style="text-align: center">
+                            Congratulation!! You have meet all the goals of previous week. Keep up the good work.
+                        </p>
+                    </div>
                 </div>
-            @endif
+               @endif
             <div class="row">
                 <table width="100%" style="bottom: 10%; position: fixed">
                     <tr class="text-md-center">

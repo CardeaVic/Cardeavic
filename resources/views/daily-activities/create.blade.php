@@ -54,6 +54,7 @@
 
 @section('content')
     <div class="container" style="flex: 1 0 auto;">
+        {{-- Error messages --}}
         @if(count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -63,15 +64,18 @@
                 </ul>
             </div>
         @endif
+        {{-- Main container for Add activity --}}
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-header">
                         Add Activity
                     </div>
+                    {{-- Add activity body --}}
                     <div class="card-body">
                         <form action="{{ route('daily-activities.store') }}" method="POST">
                             @csrf
+                            {{-- Date picker --}}
                             <div class="form-group row">
                                 <label for="date" class="col-md-4 col-form-label text-md-right">Date</label>
                                 <div class="datepicker date input-group p-0 shadow-sm col-md-6">
@@ -79,7 +83,7 @@
                                     <div class="input-group-append"><span class="input-group-text"><i class="fa fa-calendar"></i></span></div>
                                 </div>
                             </div>
-
+                            {{-- Physical activity --}}
                             <div class="form-group row">
                                 <label for="physical_activity" class="col-md-4 col-form-label text-md-right">Physical Activity</label>
                                 <div class="col-md-6 align-middle" style="margin-top: 1.5%">
@@ -93,7 +97,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            {{-- Hours and minutes --}}
                             <div class="form-group row" id="physical_hidden" style="display: none">
                                 <label for="physical_hours" class="col-md-4 col-form-label text-md-right">Hours</label>
                                 <div class="col-md-3">
@@ -105,7 +109,7 @@
                                     <input id="minutes" placeholder="Minutes" type="number" min="0" max="60" value="0" class="form-control input-group @error('minutes') is-invalid @enderror" name="minutes">
                                 </div>
                             </div>
-
+                             {{-- Fruits and vegetables --}}   
                             <div class="form-group row">
                                 <label for="physical_activity" class="col-md-4 col-form-label text-md-right">Fruits and Vegetable</label>
                                 <div class="col-md-6 align-middle" style="margin-top: 1.5%">
@@ -119,14 +123,14 @@
                                     </div>
                                 </div>
                             </div>
-
+                            {{-- Servings --}}        
                             <div class="form-group row" id="servings_hidden" style="display: none">
                                 <label for="fruit_vege" class="col-md-4 col-form-label text-md-right">How Many Servings?</label>
                                 <div class="col-md-6">
                                     <input id="fruit_vege" placeholder="Servings" type="number" min="0" max="20" value="0" class="form-control input-group @error('fruit_vege') is-invalid @enderror" name="fruit_vege">
                                 </div>
                             </div>
-
+                            {{-- Smoking --}}
                             <div class="form-group row">
                                 <label for="physical_activity" class="col-md-4 col-form-label text-md-right">Did you smoke?</label>
                                 <div class="col-md-6 align-middle" style="margin-top: 1.5%">
@@ -140,11 +144,10 @@
                                     </div>
                                 </div>
                             </div>
-
+                            {{-- Submit --}}
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary" style="background-color: #53b3a6; border: none">
-
                                         {{ __('Submit') }}
                                     </button>
                                 </div>
@@ -155,6 +158,7 @@
                 </div>
             </div>
         </div>
+        {{-- Main add activity form container ends --}}
     </div>
 @endsection
 

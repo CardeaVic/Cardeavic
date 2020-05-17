@@ -21,7 +21,7 @@
                         <h1>Your result is ready!</h1>
                     </header>
                     <div class="w3-container">
-                        <p>The result is a machine generated probability of not having a heart stroke given the current
+                        <p>The result is a machine generated probability of <b>NOT</b> having a heart stroke given the current
                             parameters.</p>
                         <span class="disclaimer">
                             <i class="fas fa-exclamation-triangle fa-4x"></i>
@@ -36,14 +36,14 @@
                 <!-- Card Face Back -->
                 <div class="w3-card w3-white w3-round w3-hover-shadow card__face card__face--back">
                     <header class="w3-container w3-center">
-                        <h2>Congratulations</h2>
+                        <h2>Congratulations!</h2>
                     </header>
                     <div class="w3-container w3-center custom-text-color">
                         There is
                         <p class="result-score">
                             {{ $response }}%
                         </p>
-                        probability that you won't get a heart stroke in near future.
+                        probability that you <b>WILL NOT</b> get a heart stroke given the current parameters.
                     </div>
                     <br><br>
                     <div class="w3-container">
