@@ -87,11 +87,13 @@
 @endpush
 
 @section('content')
+    {{-- Main container for daily activities --}}
     <div class="container" style="flex: 1 0 auto;" >
         <div class="row justify-content-center">
             <div class="col-md-12">
+                {{-- Add and export button --}}
                 <div class="row justify-content-end" style="margin-top: 16px">
-                <button class="btn btn-primary" style="background-color: #53b3a6; border: none; margin-right:16px" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>
+                    <button class="btn btn-primary" style="background-color: #53b3a6; border: none; margin-right:16px" onclick="window.location.href = '{{ route('daily-activities.create') }}'">New Activity</button>
                     <button class="btn btn-primary" style="background-color: #53b3a6; border: none; margin-right:16px" onclick="window.location.href = '{{ route('daily-activities.export') }}'">Export</button>
                 </div>
                 <div class="card" style="margin-top: 2%">
@@ -99,8 +101,10 @@
                         Daily Activities
                     </div>
                     <div class="card-body">
+                        {{-- Table --}}
                         @if($daily_activities -> count() > 0)
                             <table width="100%">
+                                {{-- Table header --}}
                                 <thead>
                                 <tr>
                                     <th scope="col">Date</th>
@@ -111,9 +115,11 @@
                                     <th scope="col">Delete</th>
                                 </tr>
                                 </thead>
+                                {{-- Table body --}}
                                 <tbody>
                                 @foreach($daily_activities as $daily_activity)
                                     <tr>
+                                        {{-- Table data --}}
                                         <td data-label="Date">{{ $daily_activity -> date -> format('d-m-Y') }}</td>
 
                                         @if($daily_activity -> physical_activity == 1)
@@ -135,15 +141,16 @@
                                             <td data-label="Smoking">No</td>
                                         @endif
 
+                                        {{-- Edit button --}}
                                         <td data-label="Edit"><a href="/daily-activities/{{$daily_activity->id}}/edit" class="btn btn-primary" style="background-color: #53b3a6; border: none">
                                             Edit</a></td>
+                                        {{-- Delete button --}}
                                         <td data-label="Delete">
                                             <form action="{{ route('daily-activities.destroy', $daily_activity->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
                                             </form>
-
                                         </td>
                                     </tr>
                                 @endforeach
@@ -154,11 +161,13 @@
                         @else
                             <h3>You have not entered any Daily Activities.</h3>
                         @endif
+                        {{-- Table ends --}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {{-- Main container ends --}}
 @endsection
 
 @push('js')
