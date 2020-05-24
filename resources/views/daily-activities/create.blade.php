@@ -69,7 +69,12 @@
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-header">
-                        Add Activity
+                        Add Activity <span>
+                                    <a data-toggle="tooltip" data-placement="bottom"
+                                       title="Please enter the information asked in the form below to better track your lifestyle.">
+                                        <i class="fas fa-info-circle p-1"></i>
+                                    </a>
+                                </span>
                     </div>
                     {{-- Add activity body --}}
                     <div class="card-body">
@@ -109,7 +114,7 @@
                                     <input id="minutes" placeholder="Minutes" type="number" min="0" max="60" value="0" class="form-control input-group @error('minutes') is-invalid @enderror" name="minutes">
                                 </div>
                             </div>
-                             {{-- Fruits and vegetables --}}   
+                             {{-- Fruits and vegetables --}}
                             <div class="form-group row">
                                 <label for="physical_activity" class="col-md-4 col-form-label text-md-right">Fruits and Vegetable</label>
                                 <div class="col-md-6 align-middle" style="margin-top: 1.5%">
@@ -123,9 +128,23 @@
                                     </div>
                                 </div>
                             </div>
-                            {{-- Servings --}}        
+                            {{-- Servings --}}
                             <div class="form-group row" id="servings_hidden" style="display: none">
-                                <label for="fruit_vege" class="col-md-4 col-form-label text-md-right">How Many Servings?</label>
+                                <label for="fruit_vege" class="col-md-4 col-form-label text-md-right">How Many Servings? <span>
+                                    <a data-html="true" data-toggle="tooltip" data-placement="bottom"
+                                       title="How much is a serving of fruit and vegetables? <br>
+                                                <strong>Fruit</strong> <br>
+                                                <ul>
+                                                <li>1 medium apple, banana, orange or pear</li>
+                                                </ul>
+                                                <strong>Vegetable</strong>
+                                                <ul>
+                                                <li>½ cup of cooked vegetables</li>
+                                                </ul>
+                                                ">
+                                        <i class="fas fa-info-circle p-1"></i>
+                                    </a>
+                                </span></label>
                                 <div class="col-md-6">
                                     <input id="fruit_vege" placeholder="Servings" type="number" min="0" max="20" value="0" class="form-control input-group @error('fruit_vege') is-invalid @enderror" name="fruit_vege">
                                 </div>

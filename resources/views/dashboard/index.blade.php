@@ -25,14 +25,24 @@
         </div>
         {{-- This week's status section --}}
         <div class="row" style="margin-top: 3%">
-            <p>This week's status</p>
+            <p>This week's status</p> <span>
+                                    <a data-toggle="tooltip" data-placement="bottom"
+                                       title="This section contains the activity and consumption level of the current week from Monday to Sunday">
+                                        <i class="fas fa-info-circle p-1"></i>
+                                    </a>
+                                </span>
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4" style="text-align: center">
                         {{-- Activity level chart --}}
                         <div class="card" style="height: 100%;">
                             <div class="card-header">
-                                Physical Activity
+                                Physical Activity <span>
+                                    <a data-toggle="tooltip" data-placement="bottom"
+                                       title="Activity level is calculated from required 150 minutes per week.">
+                                        <i class="fas fa-info-circle p-1"></i>
+                                    </a>
+                                </span>
                             </div>
                             <div class="card-body" style="margin-top: 10%">
                                 <div class="email-statis-wrap">
@@ -64,7 +74,12 @@
                         {{-- Nutrition chart --}}
                         <div class="card" style=" height: 100%">
                             <div class="card-header">
-                                Nutrition
+                                Nutrition <span>
+                                    <a data-toggle="tooltip" data-placement="bottom"
+                                       title="Consumption level is calculated from required 35 serves per week.">
+                                        <i class="fas fa-info-circle p-1"></i>
+                                    </a>
+                                </span>
                             </div>
                             <div class="card-body" style="margin-top: 10%">
                                 <div class="email-statis-wrap">
@@ -86,7 +101,13 @@
         </div>
         {{-- All time trend section --}}
         <div class="row" style="margin-top: 3%">
-            <p>All Time Trends</p>
+            <p>All Time Trends</p><span>
+                                    <a data-toggle="tooltip" data-placement="bottom"
+                                       title="All time trends are graphed with all the data entered by the user.
+                                                The Expected level in each graph are the minimum required values for each day.">
+                                        <i class="fas fa-info-circle p-1"></i>
+                                    </a>
+                                </span>
             <div class="col-md-12">
                 <div class="row">
                     {{-- Physical activity chart --}}
