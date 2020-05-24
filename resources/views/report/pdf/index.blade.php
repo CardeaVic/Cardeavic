@@ -265,7 +265,7 @@
                         <ul>
                             @if($numberOfServings < 35)
                                 <p class="sub-sub-heading">Nutrition</p>
-                                <li class="missed-goals"> Read about <a href="https://www.verywellfit.com/calorie-counts-and-nutrition-facts-overview-4581869calorie count and nutrition facts">calorie count and nutrition facts</a></li>
+                                <li class="missed-goals"> Read about <a href="https://www.verywellfit.com/calorie-counts-and-nutrition-facts-overview-4581869">calorie count and nutrition facts</a></li>
                                 <li class="missed-goals">Collection of <a href="https://www.bbcgoodfood.com/recipes/collection/fruit-salad"> Fruit Salad Receipe</a></li>
                                 <li class="missed-goals">Making <a href="https://www.heartfoundation.org.au/Heart-health-education/Making-healthier-meals-at-home">Healthier Meals at home</a></li>
                                 <li class="missed-goals">Make <a href="https://www.ambitiouskitchen.com/healthy-veggie-packed-dinners/">Veggie Pack dinners at home</a></li>

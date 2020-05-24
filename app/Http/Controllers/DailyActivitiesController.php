@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\DailyActivity;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Validator;
 
 class DailyActivitiesController extends Controller
@@ -189,20 +190,26 @@ class DailyActivitiesController extends Controller
     }
 
     public function export(){
+
+
+        $userId = auth() -> user() -> id;
+        $dailyActivities = DailyActivity::where('user_id', $userId) -> orderBy('date', 'asc') -> get();
+        $dailyActivitiesModified = $dailyActivities->transform(function ($dailyActivity) {
+            $dailyActivity -> date = $dailyActivity -> date;
+            $dailyActivity -> smoke = $dailyActivity -> smoke == 0 ? "No" : "Yes";
+            return $dailyActivity;
+        });
         header("Content-type: text/csv");
         header("Content-Disposition: attachment; filename=file.csv");
         header("Pragma: no-cache");
         header("Expires: 0");
-
-        $userId = auth() -> user() -> id;
-        $dailyActivities = DailyActivity::where('user_id', $userId) -> orderBy('date', 'asc') -> get();
         $columns = array('Date', 'Activity Hour', 'Activity Minute', 'Food Servings', 'Smoked');
 
         $file = fopen('php://output', 'w');
         fputcsv($file, $columns);
 
-        foreach($dailyActivities as $dailyActivity) {
-            fputcsv($file, array($dailyActivity->date,$dailyActivity->hours,$dailyActivity->minutes,$dailyActivity->servings,$dailyActivity->smoke));
+        foreach($dailyActivitiesModified as $dailyActivity) {
+            fputcsv($file, array($dailyActivity->date -> toDateString(),$dailyActivity->hours,$dailyActivity->minutes,$dailyActivity->servings,$dailyActivity->smoke));
         }
         exit();
     }
