@@ -4737,7 +4737,7 @@ body.box-layout {
 }
 
 .bg-bubbles li:nth-child(10) {
-    left: 60%;
+    left: 40%;
     width: 120px;
     height: 120px;
     -webkit-animation-delay: 11s;
