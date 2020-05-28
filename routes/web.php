@@ -12,12 +12,7 @@
 */
 
 // Route for landing page
-Route::get('/landing', 'PagesController@landing');
-
-// Initial password protection route
-Route::get('/', function () {
-    return view('pages.password');
-});
+Route::get('/', 'PagesController@landing');
 
 //Welcomepage
 Route::get('welcome', function () {
