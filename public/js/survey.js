@@ -163,9 +163,9 @@ var json = {
                     "validators": [
                         {
                             type: "numeric",
-                            minValue: 0,
-                            maxValue: 300,
-                            text: "Height should be positive",
+                            minValue: 50,
+                            maxValue: 250,
+                            text: "Height should be between 50 and 250",
                         }
                     ],
                 },
@@ -178,9 +178,9 @@ var json = {
                     "validators": [
                         {
                             type: "numeric",
-                            minValue: 0,
+                            minValue: 1,
                             maxValue: 300,
-                            text: "Weight should be positive",
+                            text: "Weight should be between 1 and 300",
                         }
                     ],
                 },

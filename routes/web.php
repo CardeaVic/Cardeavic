@@ -10,14 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route for index
+Route::get('/', 'PagesController@landing');
 
 // Route for landing page
-Route::get('/landing', 'PagesController@landing');
-
-// Initial password protection route
-Route::get('/', function () {
-    return view('pages.password');
-});
+Route::get('/landing', 'PagesController@landing') -> name('landing');
 
 //Welcomepage
 Route::get('welcome', function () {
