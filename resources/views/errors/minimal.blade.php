@@ -79,7 +79,7 @@
         <i class="notika-icon notika-close"></i>
         <h2>ERROR <span class="counter">@yield('code')</span></h2>
         <p> @yield('message')</p>
-        <a href="{{ route('landing') }}" class="btn">Home</a>
+        <a href="/" class="btn">Home</a>
         <a href="{{ route('home') }}" class="btn error-btn-mg">Login</a>
     </div>
     {{-- Background Bubbles       --}}
