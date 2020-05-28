@@ -173,7 +173,7 @@ var json = {
                     "type": "text",
                     "name": "Weight(kgs)?",
                     "isRequired": true,
-                    "requiredErrorText": "Please enter your height in kilograms",
+                    "requiredErrorText": "Please enter your weight in kilograms",
                     "inputType": "number",
                     "validators": [
                         {
