@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route for index
+Route::get('/', 'PagesController@landing');
 
 // Route for landing page
-Route::get('/', 'PagesController@landing');
+Route::get('/landing', 'PagesController@landing') -> name('landing');
 
 //Welcomepage
 Route::get('welcome', function () {
