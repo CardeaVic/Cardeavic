@@ -173,7 +173,7 @@ var json = {
                     "type": "text",
                     "name": "Weight(kgs)?",
                     "isRequired": true,
-                    "requiredErrorText": "Please enter your height in kilograms",
+                    "requiredErrorText": "Please enter your weight in kilograms",
                     "inputType": "number",
                     "validators": [
                         {
@@ -255,3 +255,8 @@ survey
 Survey.surveyStrings.progressText = "Question {0} of {1}";
 
 $("#surveyElement").Survey({model: survey, css: myCss});
+
+// Disable - and e
+document.body.onkeydown = function(e){
+    return e.keyCode !== 189 && e.keyCode !== 69
+}
